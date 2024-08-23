@@ -77,12 +77,12 @@ import time
 import netifaces
 import os
 import cec 
-import random 
 import concurrent.futures
 
 cameras = []
 
 def start_apps():
+    global cameras
     if len(cameras) == 0:
         files = [
             "/home/dz0ny/4.webm",
@@ -97,7 +97,6 @@ def start_apps():
         cmd = f"/usr/bin/mpv {camera1} --loop"
         yield subprocess.Popen(shlex.split(cmd))
 
-# Function to monitor the processes
 def monitor_cec():
     cec.add_callback(log_cb, cec.EVENT_LOG)
     
@@ -116,10 +115,11 @@ def detect_cameras():
     global cameras
     newCameras = discover_onvif_cameras()
     if len(newCameras) > 0 and newCameras != cameras:
+       cameras = newCameras
        restart()
-    cameras = newCameras
  
 def monitor_onvif():
+    global cameras
     while True:
         detect_cameras()
         if len(cameras) > 0:
@@ -176,8 +176,10 @@ def scan_camera(i):
         return None
 
 def main():
+    global cameras
+    
     cec.init()
-
+    # Start the monitoring thread
     _cec = threading.Thread(target=monitor_cec)
     _cec.daemon = True  # Ensure the thread doesn't block the main program exit
     _cec.start()
