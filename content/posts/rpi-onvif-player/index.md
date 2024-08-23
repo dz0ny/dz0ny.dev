@@ -11,6 +11,7 @@ image:
   focal_point: "Center"
   preview_only: false
 ---
+
 ![Featured](featured.png)
 
 In today’s world, setting up a DIY security camera system is more accessible than ever, thanks to affordable hardware like the Raspberry Pi and a variety of open-source tools. Recently, I embarked on a project to create a custom security camera display system using a Raspberry Pi, i3 window manager, python-cec, and MPV. Here’s a detailed walkthrough of how I brought this project to life.
