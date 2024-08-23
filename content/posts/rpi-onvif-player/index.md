@@ -209,7 +209,3 @@ This script listens for specific button presses on the remote and triggers the c
 #### Putting It All Together
 
 With MPV handling the video streams, i3 managing the layouts, and Python-CEC allowing remote control, the system came together beautifully. I can now use the TV remote to switch between different camera views, making the system intuitive and easy to use.
-
-### Conclusion
-
-This project highlights the power and flexibility of using open-source tools like MPV, i3, and Python-CEC on a Raspberry Pi. By combining these elements, I was able to create a custom security camera display system that is both functional and user-friendly. Whether you’re looking to monitor a small home setup or a larger property, this approach offers a highly customizable and cost-effective solution.
