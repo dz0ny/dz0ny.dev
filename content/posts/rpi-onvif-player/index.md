@@ -2,17 +2,16 @@
 date: "2024-08-22T14:32:45+01:00"
 draft: false
 featured: true
-title: "Building a DIY Security Camera Display System Using Raspberry Pi, i3, Python-CEC, and MPV"
+title: "Building a DIY Security Camera Display Using Raspberry Pi, i3 and MPV"
 tags: ["rpi", "mpv", "i3", "onvif", "camera", "player"]
 
 image:
   placement: 1
-  caption: "RPI Player wiht i3"
+  caption: "RPI Player with i3"
   focal_point: "Center"
   preview_only: false
 ---
-
-### 
+![Featured](featured.png)
 
 In today’s world, setting up a DIY security camera system is more accessible than ever, thanks to affordable hardware like the Raspberry Pi and a variety of open-source tools. Recently, I embarked on a project to create a custom security camera display system using a Raspberry Pi, i3 window manager, python-cec, and MPV. Here’s a detailed walkthrough of how I brought this project to life.
 

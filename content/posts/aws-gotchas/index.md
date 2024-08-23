@@ -4,14 +4,8 @@ draft: false
 featured: true
 title: "AWS Gotchas"
 tags: ["aws"]
-
-image:
- placement: 1
- caption: "Cover by Yevheniia Nikitina"
- focal_point: "Center"
- preview_only: false
 ---
-
+![Featured](featured.png)
 
 Lately, AWS has been giving us a lot of headaches on the Easy Blog Networks project. It turns out only because resources (we pay per how many things we can do per second) are fiercely measured on AWS, but the underlying problems are happening on all EBN providers. So when we go over operations per second limit which is 100, the EC2 hypervisor will limit entire server by lowering CPU resources. We see that as CPU steal. Now in order to figure out what exactly is using more than 100 operations per second, I installed netdata on a few servers. Which gave me the following picture:
 

@@ -4,13 +4,8 @@ draft: false
 featured: true
 title: "Thoughts on an asynchronous work day"
 tags: ["scrum", "remote-work"]
-
-image:
- placement: 1
- caption: ""
- focal_point: "Center"
- preview_only: false
 ---
+![Featured](featured.png)
 
 The morning clock was always the most annoying thing that can wake you up, seconded by getting from bed early. When I was in primary school, I had to wake up at around six in the morning, and to think that would be for the rest of my life seemed excruciating. Then came high school where I could wake up at 7.50, do the morning ritual, and be in class at eight, and that looked like a significant improvement. Then again in college, I often had class early and then in the afternoon which made it impossible to be productive.
 

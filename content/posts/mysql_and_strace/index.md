@@ -4,13 +4,8 @@ draft: false
 featured: true
 title: "Using strace to figure out what is crashing MySQL"
 tags: ["strace", "debug", "crash", "mysql"]
-
-image:
-  placement: 1
-  caption: "MySQL crash log"
-  focal_point: "Center"
-  preview_only: false
 ---
+![Featured](featured.png)
 
 So this all started when one of the production servers started to behave oddly. It would start up work for a while then crash with something like this:
 
