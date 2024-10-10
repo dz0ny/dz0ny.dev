@@ -1,17 +1,11 @@
-title = "Awesome Hugo blog"
-baseURL = 'https://hba.sid.one/'
+title = "Blog - Janez Troha"
+baseURL = 'https://dz0ny.dev/'
 
 # This is what goes in <html lang="">
 languageCode = 'en-us'
 
-theme = "hugo-blog-awesome"
-
 # This defines how dates are formatted
 defaultContentLanguage = "en-gb"
-
-# To enable Google Analytics 4 (gtag.js) provide G-MEASUREMENT_ID below.
-# To disable Google Analytics, simply leave the field empty or remove the next line
-googleAnalytics = '' # G-MEASUREMENT_ID
 
 # Enable emojis globally
 enableEmoji = true
@@ -40,29 +34,23 @@ disqusShortname = ''
     name = 'Posts'
     url = '/posts/'
     weight = 20
-  [[menu.main]]
-    pageRef="about"
-    name = 'About'
-    url = '/about/'
-    weight = 30
-
 [params]
-  sitename = "Awesome hugo blog"
-  defaultColor = "dark" # set color mode: dark, light, auto
+  sitename = "Janez Troha"
+  defaultColor = "auto" # set color mode: dark, light, auto
   # Setting it to 'auto' applies the color scheme based on the visitor's device color preference.If you don't specify anything, ignore this parameter, or leave it blank,
   # the default value is set to 'auto'.
   # You can take a look at layouts/index.html for more information.
-  description = "Minimal Hugo blog theme with light and dark mode support"
+  description = "Personal page of Janez Troha"
   mainSections = ['posts']
-  toc = true # set to false to disable table of contents 'globally'
+  toc = false # set to false to disable table of contents 'globally'
   goToTop = true # set to false to disable 'go to top' button
 
 [params.author]
-  avatar = "avatar.jpg" # put the file in assets folder; also ensure that image has same height and width
+  avatar = "avatar.png" # put the file in assets folder; also ensure that image has same height and width
   # Note: image is not rendered if the resource(avatar image) is not found. No error is displayed.
-  intro = "Awesome hugo blog"
-  name = "Sidharth R"
-  description = "A fast, minimalistic Hugo theme with light and dark mode support, for running a personal site or blog"
+  intro = "Principal Engineer @Niteo"
+  name = "Janez Troha"
+  description = "Hacker from crib (mostly breaking things apart), loves electronics and mountain biking and FPV."
 
 # Allow to override webmanifest options
 [params.webmanifest]
@@ -79,11 +67,19 @@ disqusShortname = ''
 
 [[params.socialIcons]]
 name = "github"
-url = "https://github.com/hugo-sid"
+url = "https://github.com/dz0ny"
 
 [[params.socialIcons]]
 name = "twitter"
-url = "https://twitter.com"
+url = "https://twitter.com/dz0ny"
+
+[[params.socialIcons]]
+name = "instagram"
+url = "https://instagram.com/dz0ny"
+
+[[params.socialIcons]]
+name = "ycombinator"
+url = "https://news.ycombinator.com/dz0ny"
 
 [[params.socialIcons]]
 name = "Rss"
@@ -94,3 +90,6 @@ startLevel = 2 # ToC starts from H2
 endLevel = 4 # ToC ends at H4
 ordered = false # generates <ul> instead of <ol>
 
+[module]
+  [[module.imports]]
+    path = "github.com/hugo-sid/hugo-blog-awesome"

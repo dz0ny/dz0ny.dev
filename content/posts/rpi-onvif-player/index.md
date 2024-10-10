@@ -4,12 +4,6 @@ draft: false
 featured: true
 title: "Building a DIY Security Camera Display Using Raspberry Pi, i3 and MPV"
 tags: ["rpi", "mpv", "i3", "onvif", "camera", "player"]
-
-image:
-  placement: 1
-  caption: "RPI Player with i3"
-  focal_point: "Center"
-  preview_only: false
 ---
 
 ![Featured](featured.png)
