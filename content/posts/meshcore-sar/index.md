@@ -11,7 +11,7 @@ categories: ["technology", "communication"]
 ## Overview
 
 **MeshCore SAR** transforms ordinary smartphones into **off-grid communication tools**.  
-It provides **messaging, GPS tracking, and tactical mapping** even when cellular and internet infrastructure fail.
+It provides **messaging, GPS tracking, and tactical mapping** even when cellular and internet infrastructure fail. It uses MeshCore network and devices to do so.
 
 ---
 
