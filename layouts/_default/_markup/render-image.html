@@ -1,0 +1,42 @@
+{{- $src := .Page.Resources.GetMatch .Destination -}}
+{{- $alt := .Text -}}
+{{- $title := .Title -}}
+
+{{- if $src -}}
+  {{- /* Image exists as page resource, process it */ -}}
+  {{- $width := 1200 -}}
+
+  {{- /* Resize image for optimal web delivery */ -}}
+  {{- $resized := $src.Resize (printf "%dx webp q85" $width) -}}
+
+  {{- /* Create responsive srcset with multiple sizes */ -}}
+  {{- $sizes := slice 320 640 960 1280 -}}
+  {{- $srcset := slice -}}
+
+  {{- range $sizes -}}
+    {{- if ge $src.Width . -}}
+      {{- $img := $src.Resize (printf "%dx webp q85" .) -}}
+      {{- $srcset = $srcset | append (printf "%s %dw" $img.RelPermalink .) -}}
+    {{- end -}}
+  {{- end -}}
+
+  <img
+    src="{{ $resized.RelPermalink }}"
+    {{- with $srcset }} srcset="{{ delimit . ", " }}"{{ end }}
+    sizes="(min-width: 1024px) 100vw, 50vw"
+    width="{{ $src.Width }}"
+    height="{{ $src.Height }}"
+    {{- with $alt }} alt="{{ . }}"{{ end }}
+    {{- with $title }} title="{{ . }}"{{ end }}
+    loading="lazy"
+    decoding="async"
+  >
+{{- else -}}
+  {{- /* Fallback for non-page-resource images (e.g., external URLs) */ -}}
+  <img
+    src="{{ .Destination | safeURL }}"
+    {{- with $alt }} alt="{{ . }}"{{ end }}
+    {{- with $title }} title="{{ . }}"{{ end }}
+    loading="lazy"
+  >
+{{- end -}}
