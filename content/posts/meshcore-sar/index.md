@@ -140,6 +140,25 @@ You can Plan, navigate, and execute — all offline.
 
 ---
 
+## FAQ
+
+### **Q: Is this a fork of MeshCore?**
+**A:** No. MeshCore SAR is a specialized **app** that works with existing MeshCore infrastructure and devices. Messages remain ASCII-only and human-readable — the app simply wraps UI widgets around recognized SAR message formats.
+
+### **Q: Can I use existing MeshCore repeaters in my area?**
+**A:** Yes! MeshCore SAR works with any existing MeshCore network. However, you'll need to know the correct frequency and settings.
+
+### **Q: What if there are no repeaters nearby?**
+**A:** You can still communicate **companion-to-companion** directly, though range will be limited. Even adding just **one repeater** to your group significantly improves performance and coverage.
+
+### **Q: How does this work with SAR teams that have their own equipment?**
+**A:** SAR teams can deploy their own MeshCore infrastructure or integrate with existing networks.
+
+### **Q: Will SAR features be merged into the main MeshCore app?**
+**A:** The core messaging remains compatible. SAR-specific features (offline maps, tactical drawing, compass navigation) are specialized tools that work best in a dedicated app.
+
+---
+
 ## Download
 
 Get MeshCore SAR for your device:
