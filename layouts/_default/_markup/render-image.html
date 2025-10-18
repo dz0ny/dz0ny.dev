@@ -30,10 +30,11 @@
   <img
     src="{{ $resized.RelPermalink }}"
     {{- with $srcset }} srcset="{{ delimit . ", " }}"{{ end }}
-    sizes="(min-width: 1024px) 100vw, 50vw"
     {{- if $customWidth }}
+    sizes="{{ $customWidth }}px"
     width="{{ $customWidth }}"
     {{- else }}
+    sizes="(min-width: 1024px) 100vw, 50vw"
     width="{{ $src.Width }}"
     {{- end }}
     height="auto"
