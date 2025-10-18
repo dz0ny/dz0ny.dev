@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:gohugo.io)",
+      "WebFetch(domain:www.brycewray.com)",
+      "mcp__chrome-devtools__navigate_page",
+      "mcp__chrome-devtools__take_snapshot",
+      "Bash(mkdir -p /Users/dz0ny/dz0ny.dev/layouts/_default/_markup)",
+      "Bash(hugo --gc --minify)",
+      "SlashCommand(/git:commit)",
+      "Bash(cat layouts/_default/_markup/render-image.html)",
+      "Bash(git add -A)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nchore: Convert HTML images to markdown with automatic optimization\n\n- Update render hook to support width, class, and style attributes\n- Convert all HTML img tags in meshcore-sar post to markdown syntax\n- Preserve flex layout and 200px width styling using markdown attributes\n- Images now automatically optimized to WebP with responsive srcset\n- Increased processed images from 51 to 87 for better performance\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

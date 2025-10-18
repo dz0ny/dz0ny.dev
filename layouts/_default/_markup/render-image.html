@@ -1,13 +1,20 @@
 {{- $src := .Page.Resources.GetMatch .Destination -}}
 {{- $alt := .Text -}}
 {{- $title := .Title -}}
+{{- $attrs := .Attributes -}}
 
 {{- if $src -}}
   {{- /* Image exists as page resource, process it */ -}}
-  {{- $width := 1200 -}}
+  {{- $maxWidth := 1200 -}}
+
+  {{- /* Check for custom width in attributes */ -}}
+  {{- $customWidth := 0 -}}
+  {{- with $attrs.width -}}
+    {{- $customWidth = int . -}}
+  {{- end -}}
 
   {{- /* Resize image for optimal web delivery */ -}}
-  {{- $resized := $src.Resize (printf "%dx webp q85" $width) -}}
+  {{- $resized := $src.Resize (printf "%dx webp q85" $maxWidth) -}}
 
   {{- /* Create responsive srcset with multiple sizes */ -}}
   {{- $sizes := slice 320 640 960 1280 -}}
@@ -24,10 +31,16 @@
     src="{{ $resized.RelPermalink }}"
     {{- with $srcset }} srcset="{{ delimit . ", " }}"{{ end }}
     sizes="(min-width: 1024px) 100vw, 50vw"
+    {{- if $customWidth }}
+    width="{{ $customWidth }}"
+    {{- else }}
     width="{{ $src.Width }}"
-    height="{{ $src.Height }}"
+    {{- end }}
+    height="auto"
     {{- with $alt }} alt="{{ . }}"{{ end }}
     {{- with $title }} title="{{ . }}"{{ end }}
+    {{- with $attrs.class }} class="{{ . }}"{{ end }}
+    {{- with $attrs.style }} style="{{ . }}"{{ end }}
     loading="lazy"
     decoding="async"
   >
@@ -37,6 +50,9 @@
     src="{{ .Destination | safeURL }}"
     {{- with $alt }} alt="{{ . }}"{{ end }}
     {{- with $title }} title="{{ . }}"{{ end }}
+    {{- with $attrs.width }} width="{{ . }}"{{ end }}
+    {{- with $attrs.class }} class="{{ . }}"{{ end }}
+    {{- with $attrs.style }} style="{{ . }}"{{ end }}
     loading="lazy"
   >
 {{- end -}}

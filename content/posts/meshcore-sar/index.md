@@ -45,19 +45,22 @@ Whether you're extending an established mesh or starting fresh, every MeshCore d
   <div style="text-align: center;">
     <h4>Messages View</h4>
     <a href="messages-1.png" target="_blank" class="image-link" style="text-decoration: none; border: none;">
-      <img src="messages-1.png" alt="Messages view" style="width: 200px; height: auto;">
+
+![Messages view](messages-1.png){width="200" style="width: 200px; height: auto;"}
     </a>
   </div>
   <div style="text-align: center;">
     <h4>Send SAR Marker</h4>
     <a href="messages-2.png" target="_blank" class="image-link" style="text-decoration: none; border: none;">
-      <img src="messages-2.png" alt="Send SAR marker" style="width: 200px; height: auto;">
+
+![Send SAR marker](messages-2.png){width="200" style="width: 200px; height: auto;"}
     </a>
   </div>
   <div style="text-align: center;">
     <h4>SAR Alerts Feed</h4>
     <a href="messages-3.png" target="_blank" class="image-link" style="text-decoration: none; border: none;">
-      <img src="messages-3.png" alt="SAR alerts" style="width: 200px; height: auto;">
+
+![SAR alerts](messages-3.png){width="200" style="width: 200px; height: auto;"}
     </a>
   </div>
 </div>
@@ -81,19 +84,22 @@ Messages appear instantly on the map with delivery tracking (Sent / Delivered / 
   <div style="text-align: center;">
     <h4>Team List</h4>
     <a href="contacts-1.png" target="_blank" class="image-link" style="text-decoration: none; border: none;">
-      <img src="contacts-1.png" alt="Contacts list" style="width: 200px; height: auto;">
+
+![Contacts list](contacts-1.png){width="200" style="width: 200px; height: auto;"}
     </a>
   </div>
   <div style="text-align: center;">
     <h4>Contact Details</h4>
     <a href="contacts-2.png" target="_blank" class="image-link" style="text-decoration: none; border: none;">
-      <img src="contacts-2.png" alt="Contact detail" style="width: 200px; height: auto;">
+
+![Contact detail](contacts-2.png){width="200" style="width: 200px; height: auto;"}
     </a>
   </div>
   <div style="text-align: center;">
     <h4>Compass View</h4>
     <a href="contacts-3.png" target="_blank" class="image-link" style="text-decoration: none; border: none;">
-      <img src="contacts-3.png" alt="Compass orientation" style="width: 200px; height: auto;">
+
+![Compass orientation](contacts-3.png){width="200" style="width: 200px; height: auto;"}
     </a>
   </div>
 </div>
@@ -113,19 +119,22 @@ Messages appear instantly on the map with delivery tracking (Sent / Delivered / 
   <div style="text-align: center;">
     <h4>Tactical Map</h4>
     <a href="map-1.png" target="_blank" class="image-link" style="text-decoration: none; border: none;">
-      <img src="map-1.png" alt="Map Ljubljana" style="width: 200px; height: auto;">
+
+![Map Ljubljana](map-1.png){width="200" style="width: 200px; height: auto;"}
     </a>
   </div>
   <div style="text-align: center;">
     <h4>Drawing Tools</h4>
     <a href="map-2.png" target="_blank" class="image-link" style="text-decoration: none; border: none;">
-      <img src="map-2.png" alt="Drawing tools" style="width: 200px; height: auto;">
+
+![Drawing tools](map-2.png){width="200" style="width: 200px; height: auto;"}
     </a>
   </div>
   <div style="text-align: center;">
     <h4>Compass Navigation</h4>
     <a href="map-3.png" target="_blank" class="image-link" style="text-decoration: none; border: none;">
-      <img src="map-3.png" alt="Compass detail" style="width: 200px; height: auto;">
+
+![Compass detail](map-3.png){width="200" style="width: 200px; height: auto;"}
     </a>
   </div>
 </div>
