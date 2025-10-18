@@ -1,0 +1,71 @@
+{{- $src := .Page.Resources.GetMatch (.Get "src") -}}
+{{- $alt := .Get "alt" -}}
+{{- $width := .Get "width" | default 0 | int -}}
+{{- $class := .Get "class" -}}
+{{- $style := .Get "style" -}}
+
+{{- if $src -}}
+  {{- /* Determine the target width */ -}}
+  {{- $targetWidth := 1200 -}}
+  {{- if gt $width 0 -}}
+    {{- $targetWidth = $width -}}
+  {{- end -}}
+
+  {{- /* Create responsive sizes */ -}}
+  {{- $sizes := slice 320 640 960 1280 -}}
+  {{- if gt $width 0 -}}
+    {{- /* For custom widths, create sizes proportional to the target */ -}}
+    {{- $sizes = slice (mul $width 1) (mul $width 2) (mul $width 3) -}}
+  {{- end -}}
+
+  <picture>
+    {{- /* Generate AVIF sources */ -}}
+    {{- $avifSrcset := slice -}}
+    {{- range $sizes -}}
+      {{- if ge $src.Width . -}}
+        {{- $img := $src.Resize (printf "%dx avif q85" .) -}}
+        {{- $avifSrcset = $avifSrcset | append (printf "%s %dw" $img.RelPermalink .) -}}
+      {{- end -}}
+    {{- end -}}
+    {{- with $avifSrcset }}
+    <source type="image/avif" srcset="{{ delimit . ", " }}"
+      {{- if gt $width 0 }} sizes="{{ $width }}px"{{ else }} sizes="(min-width: 1024px) 100vw, 50vw"{{ end }}>
+    {{- end -}}
+
+    {{- /* Generate WebP sources */ -}}
+    {{- $webpSrcset := slice -}}
+    {{- range $sizes -}}
+      {{- if ge $src.Width . -}}
+        {{- $img := $src.Resize (printf "%dx webp q85" .) -}}
+        {{- $webpSrcset = $webpSrcset | append (printf "%s %dw" $img.RelPermalink .) -}}
+      {{- end -}}
+    {{- end -}}
+    {{- with $webpSrcset }}
+    <source type="image/webp" srcset="{{ delimit . ", " }}"
+      {{- if gt $width 0 }} sizes="{{ $width }}px"{{ else }} sizes="(min-width: 1024px) 100vw, 50vw"{{ end }}>
+    {{- end -}}
+
+    {{- /* Fallback img tag */ -}}
+    {{- $fallback := $src.Resize (printf "%dx webp q85" $targetWidth) -}}
+    <img
+      src="{{ $fallback.RelPermalink }}"
+      {{- with $alt }} alt="{{ . }}"{{ end }}
+      {{- if gt $width 0 }} width="{{ $width }}"{{ else }} width="{{ $src.Width }}"{{ end }}
+      height="auto"
+      {{- with $class }} class="{{ . }}"{{ end }}
+      {{- with $style }} style="{{ . | safeHTMLAttr }}"{{ end }}
+      loading="lazy"
+      decoding="async"
+    >
+  </picture>
+{{- else -}}
+  {{- /* Fallback for external images */ -}}
+  <img
+    src="{{ .Get "src" | safeURL }}"
+    {{- with $alt }} alt="{{ . }}"{{ end }}
+    {{- if gt $width 0 }} width="{{ $width }}"{{ end }}
+    {{- with $class }} class="{{ . }}"{{ end }}
+    {{- with $style }} style="{{ . }}"{{ end }}
+    loading="lazy"
+  >
+{{- end -}}
