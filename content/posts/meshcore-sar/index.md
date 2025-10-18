@@ -15,21 +15,6 @@ It provides **messaging, GPS tracking, and tactical mapping** even when cellular
 
 ---
 
-## LoRa & MeshCore Technology
-
-**LoRa (Long Range)** enables secure, ultra-low-power communication over kilometers.  
-**MeshCore Protocol** extends this by creating a **self-healing, multi-hop mesh** .
-
-
-- **Automatic routing & fallback** through other devices  
-- **Adaptive location broadcasting** — only updates when needed  
-- **Message persistence & retries** with ACK confirmation  
-- **Optimized for battery life**
-
-> MeshCore SAR ensures your message always finds its path — even across mountains or disaster zones.
-
----
-
 ## Hardware & Infrastructure
 
 **MeshCore SAR requires MeshCore devices** to transmit data over the LoRa mesh network.  
