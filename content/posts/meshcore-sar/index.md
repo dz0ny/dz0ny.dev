@@ -214,5 +214,5 @@ Get MeshCore SAR for your device:
 **iOS (TestFlight Beta)**  
 [Download for iOS](https://testflight.apple.com/join/HhzerdHp)
 
-**Android**  
-[Download APK](https://drive.google.com/file/d/1vuwh65CTBTLrj4HXJBa4nSXxcHicUcN0/view?usp=sharing)
+**Android / Windows / Linux / macOS**  
+[Download Latest Release](https://meshcore-sar.dz0ny.dev/unstable/latest/index.html)
