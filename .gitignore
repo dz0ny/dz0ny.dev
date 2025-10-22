@@ -4,4 +4,4 @@ exampleSite/.hugo_build.lock
 public
 .DS_Store
 resources
-**.DS_Store
+*.DS_Store

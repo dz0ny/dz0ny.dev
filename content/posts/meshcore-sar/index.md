@@ -38,25 +38,27 @@ Whether you're extending an established mesh or starting fresh, every MeshCore d
 <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
   <div style="text-align: center;">
     <a href="app-1.jpg" target="_blank" class="image-link" style="text-decoration: none; border: none;">
-      {{< img src="app-1.jpg" alt="Client device view 1" width="200" >}}
+      {{< img src="app-1.jpg" alt="Client device view 1" width="300" >}}
     </a>
   </div>
   <div style="text-align: center;">
     <a href="app-2.jpg" target="_blank" class="image-link" style="text-decoration: none; border: none;">
-      {{< img src="app-2.jpg" alt="Client device view 2" width="200" >}}
+      {{< img src="app-2.jpg" alt="Client device view 2" width="300" >}}
     </a>
   </div>
   <div style="text-align: center;">
     <a href="app-3.jpg" target="_blank" class="image-link" style="text-decoration: none; border: none;">
-      {{< img src="app-3.jpg" alt="Client device view 3" width="200" >}}
+      {{< img src="app-3.jpg" alt="Client device view 3" width="300" >}}
     </a>
   </div>
   <div style="text-align: center;">
     <a href="app-4.jpg" target="_blank" class="image-link" style="text-decoration: none; border: none;">
-      {{< img src="app-4.jpg" alt="Client device view 4" width="200" >}}
+      {{< img src="app-4.jpg" alt="Client device view 4" width="300" >}}
     </a>
   </div>
 </div>
+
+The new interface takes inspiration from **Meshtastic InkHUD**, bringing a clean, information-dense display to MeshCore devices:
 
 - **Improved navigation** with redesigned screens for Messages, Contacts, and Settings
 - **Multi-language support** — interface available in multiple languages including Slovenian and Croatian
