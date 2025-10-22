@@ -30,6 +30,33 @@ The app connects to these devices via Bluetooth, transforming your smartphone in
 
 Whether you're extending an established mesh or starting fresh, every MeshCore device becomes part of your resilient communication backbone.
 
+
+---
+
+## Client Devices
+
+
+
+### Enhanced UI Experience
+The MeshCore client devices now feature a **completely revamped user interface** that makes field operations more intuitive:
+- **Improved navigation** with redesigned screens for Messages, Contacts, and Settings
+- **Multi-language support** — interface available in multiple languages including Slovenian and Croatian
+- **Better visual hierarchy** with optimized font usage and screen layouts
+- **Enhanced GPS display** showing time since last fix alongside accuracy metrics
+
+### Reliability Improvements
+**Watchdog timer implementation** ensures your device stays operational when you need it most:
+- **Automatic recovery** from software freezes
+- **NRF52 hardware watchdog** prevents system lockups
+- **Continuous operation** in harsh field conditions
+- **No manual intervention** required — devices self-recover from crashes
+
+These improvements mean your MeshCore device remains a dependable communication lifeline throughout extended SAR operations.
+
+### Get the Enhanced Firmware
+Find the latest client device patches and improvements at:  
+**[github.com/dz0ny/MeshCore/tree/revert-ble-advert](https://github.com/dz0ny/MeshCore/tree/revert-ble-advert)**
+
 ---
 
 ## Messages
