@@ -58,8 +58,6 @@ Whether you're extending an established mesh or starting fresh, every MeshCore d
   </div>
 </div>
 
-### Enhanced UI Experience
-The MeshCore client devices now feature a **completely revamped user interface** that makes field operations more intuitive:
 - **Improved navigation** with redesigned screens for Messages, Contacts, and Settings
 - **Multi-language support** — interface available in multiple languages including Slovenian and Croatian
 - **Better visual hierarchy** with optimized font usage and screen layouts
