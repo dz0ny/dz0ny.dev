@@ -37,23 +37,23 @@ Whether you're extending an established mesh or starting fresh, every MeshCore d
 
 <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
   <div style="text-align: center;">
-    <a href="app-1.png" target="_blank" class="image-link" style="text-decoration: none; border: none;">
-      {{< img src="app-1.heic" alt="Client device view 1" width="200" >}}
+    <a href="app-1.jpg" target="_blank" class="image-link" style="text-decoration: none; border: none;">
+      {{< img src="app-1.jpg" alt="Client device view 1" width="200" >}}
     </a>
   </div>
   <div style="text-align: center;">
-    <a href="app-2.png" target="_blank" class="image-link" style="text-decoration: none; border: none;">
-      {{< img src="app-2.heic" alt="Client device view 2" width="200" >}}
+    <a href="app-2.jpg" target="_blank" class="image-link" style="text-decoration: none; border: none;">
+      {{< img src="app-2.jpg" alt="Client device view 2" width="200" >}}
     </a>
   </div>
   <div style="text-align: center;">
-    <a href="app-3.png" target="_blank" class="image-link" style="text-decoration: none; border: none;">
-      {{< img src="app-3.heic" alt="Client device view 3" width="200" >}}
+    <a href="app-3.jpg" target="_blank" class="image-link" style="text-decoration: none; border: none;">
+      {{< img src="app-3.jpg" alt="Client device view 3" width="200" >}}
     </a>
   </div>
   <div style="text-align: center;">
-    <a href="app-4.png" target="_blank" class="image-link" style="text-decoration: none; border: none;">
-      {{< img src="app-4.heic" alt="Client device view 4" width="200" >}}
+    <a href="app-4.jpg" target="_blank" class="image-link" style="text-decoration: none; border: none;">
+      {{< img src="app-4.jpg" alt="Client device view 4" width="200" >}}
     </a>
   </div>
 </div>
