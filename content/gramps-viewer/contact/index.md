@@ -2,7 +2,6 @@
 title: "Contact - GRAMPS Viewer"
 date: 2025-11-11
 draft: false
-layout: "single"
 ---
 
 # Contact

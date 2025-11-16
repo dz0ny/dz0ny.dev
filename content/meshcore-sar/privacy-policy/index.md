@@ -2,7 +2,6 @@
 title: "Privacy Policy - MeshCore SAR"
 date: 2025-10-18
 draft: false
-layout: "single"
 ---
 
 # Privacy Policy
