@@ -4,6 +4,7 @@ subtitle: "Off-Grid LoRa Mesh Communication for Search & Rescue"
 description: "Resilient, offline communication for field operations — built on MeshCore and LoRa mesh networking. Provides messaging, GPS tracking, and tactical mapping when cellular and internet infrastructure fail."
 date: 2025-10-18
 draft: false
+layout: "single"
 ---
 
 # MeshCore SAR
