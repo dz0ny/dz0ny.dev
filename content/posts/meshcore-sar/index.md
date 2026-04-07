@@ -76,7 +76,7 @@ These improvements mean your MeshCore device remains a dependable communication 
 
 ### Get the Enhanced Firmware
 Find the latest client device patches and improvements at:  
-**[github.com/dz0ny/MeshCore/tree/revert-ble-advert](https://github.com/dz0ny/MeshCore/tree/revert-ble-advert)**
+**[github.com/dz0ny/meshcore-sar](https://github.com/dz0ny/meshcore-sar)**
 
 ---
 
@@ -211,8 +211,5 @@ You can Plan, navigate, and execute — all offline.
 
 Get MeshCore SAR for your device:
 
-**iOS (TestFlight Beta)**  
-[Download for iOS](https://testflight.apple.com/join/HhzerdHp)
-
-**Android / Windows / Linux / macOS**  
-[Download Latest Release](https://meshcore-sar.dz0ny.dev/unstable/latest/index.html)
+**iOS / Windows / Linux / macOS**  
+[Download on GitHub](https://github.com/dz0ny/meshcore-sar)

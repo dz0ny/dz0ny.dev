@@ -67,14 +67,8 @@ The enhanced firmware brings reliability and usability improvements:
 
 Get MeshCore SAR for your device:
 
-**iOS (TestFlight Beta)**  
-[Download for iOS](https://testflight.apple.com/join/HhzerdHp)
-
-**Android / Windows / Linux / macOS**  
-[Download Latest Release](https://meshcore-sar.dz0ny.dev/unstable/latest/index.html)
-
-**Enhanced Client Firmware**  
-[github.com/dz0ny/MeshCore/tree/revert-ble-advert](https://github.com/dz0ny/MeshCore/tree/revert-ble-advert)
+**iOS / Windows / Linux / macOS**  
+[Download on GitHub](https://github.com/dz0ny/meshcore-sar)
 
 ---
 
@@ -83,4 +77,4 @@ Get MeshCore SAR for your device:
 - [Privacy Policy](/meshcore-sar/privacy-policy/) - Learn how we protect your data
 - [Contact](/meshcore-sar/contact/) - Get in touch with questions or feedback
 
-Built for Search & Rescue Operations | [Open Source on GitHub](https://github.com/dz0ny/MeshCore)
+Built for Search & Rescue Operations | [Open Source on GitHub](https://github.com/dz0ny/meshcore-sar)
