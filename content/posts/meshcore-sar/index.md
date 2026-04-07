@@ -1,7 +1,7 @@
 ---
 title: "MeshCore SAR"
-subtitle: "Off-Grid LoRa Mesh Communication for Search & Rescue"
-description: "Resilient, offline communication for field operations — built on MeshCore and LoRa mesh networking."
+subtitle: "Off-Grid LoRa Coordination for Search & Rescue"
+description: "MeshCore SAR turns phones and MeshCore radios into a resilient field coordination system with messaging, GPS tracking, and offline tactical mapping."
 date: 2025-10-18
 draft: false
 tags: ["meshcore", "sar", "lora", "communication", "offline", "mesh-networking"]
@@ -10,15 +10,15 @@ categories: ["technology", "communication"]
 ![Featured](featured.jpg)
 ## Overview
 
-**MeshCore SAR** transforms ordinary smartphones into **off-grid communication tools**.  
-It provides **messaging, GPS tracking, and tactical mapping** even when cellular and internet infrastructure fail. It uses MeshCore network and devices to do so.
+**MeshCore SAR** turns ordinary smartphones into a practical **off-grid coordination tool** for search and rescue teams.  
+Paired with MeshCore radios, it delivers **messaging, GPS tracking, and tactical mapping** when cellular service and internet access are unavailable.
 
 ---
 
 ## Hardware & Infrastructure
 
-**MeshCore SAR requires MeshCore devices** to transmit data over the LoRa mesh network.  
-The app connects to these devices via Bluetooth, transforming your smartphone into a mesh communication terminal.
+**MeshCore SAR requires MeshCore devices** for LoRa transport.  
+The app connects to those devices over Bluetooth and turns a smartphone into a field terminal for communication, location sharing, and navigation.
 
 ### MeshCore Device Options
 - **Dedicated MeshCore nodes** — purpose-built for field deployment  
@@ -26,9 +26,9 @@ The app connects to these devices via Bluetooth, transforming your smartphone in
 - **Client devices** — other team members' MeshCore units  
 - **Room nodes** — persistent communication hubs  
 
-> **Seamless Integration**: MeshCore SAR works with any existing MeshCore network — no separate infrastructure needed.
+> **Seamless Integration**: MeshCore SAR works with existing MeshCore deployments, so teams can extend a current network or deploy their own without changing workflows.
 
-Whether you're extending an established mesh or starting fresh, every MeshCore device becomes part of your resilient communication backbone.
+Whether you're extending an established mesh or starting from scratch, every MeshCore node becomes part of a resilient field communication backbone.
 
 
 ---
@@ -58,24 +58,24 @@ Whether you're extending an established mesh or starting fresh, every MeshCore d
   </div>
 </div>
 
-The new interface takes inspiration from **Meshtastic InkHUD**, bringing a clean, information-dense display to MeshCore devices:
+The client interface takes inspiration from **Meshtastic InkHUD** and adapts it for MeshCore with a cleaner, more operational display:
 
 - **Improved navigation** with redesigned screens for Messages, Contacts, and Settings
-- **Multi-language support** — interface available in multiple languages including Slovenian and Croatian
-- **Better visual hierarchy** with optimized font usage and screen layouts
-- **Enhanced GPS display** showing time since last fix alongside accuracy metrics
+- **Multi-language support** — including Slovenian and Croatian
+- **Better visual hierarchy** with clearer typography and screen layout
+- **Enhanced GPS display** showing both fix age and accuracy
 
 ### Reliability Improvements
-**Watchdog timer implementation** ensures your device stays operational when you need it most:
+**Watchdog timer implementation** helps devices stay operational when teams are under pressure:
 - **Automatic recovery** from software freezes
-- **NRF52 hardware watchdog** prevents system lockups
+- **NRF52 hardware watchdog** to prevent lockups
 - **Continuous operation** in harsh field conditions
-- **No manual intervention** required — devices self-recover from crashes
+- **No manual intervention** after common crashes
 
-These improvements mean your MeshCore device remains a dependable communication lifeline throughout extended SAR operations.
+Together, these changes make client devices more dependable during long SAR operations where failures are expensive.
 
-### Get the Enhanced Firmware
-Find the latest client device patches and improvements at:  
+### Project Repository
+Find the source, releases, and implementation details at:  
 **[github.com/dz0ny/meshcore-sar](https://github.com/dz0ny/meshcore-sar)**
 
 ---
@@ -111,15 +111,15 @@ Find the latest client device patches and improvements at:
 </div>
 
 ### Mission Communication
-- **Direct Messages** – private one-to-one communication  
-- **Public Channels** – broadcast updates across nodes  
-- **Rooms** – persistent logs (e.g., *General*, *Emergency*)  
+- **Direct Messages** – private one-to-one coordination  
+- **Public Channels** – broadcast updates across the network  
+- **Rooms** – persistent shared logs (e.g., *General*, *Emergency*)  
 
 ### SAR Marker Messages
-Easily send geo-tagged alerts:  
+Send geo-tagged alerts in seconds:  
 *Found Person* • *Fire Location* • *Staging Area* • *Object Found*
 
-Messages appear instantly on the map with delivery tracking (Sent / Delivered / Retrying / Failed).
+Messages appear directly on the map with delivery states such as Sent, Delivered, Retrying, and Failed.
 
 ---
 
@@ -147,11 +147,11 @@ Messages appear instantly on the map with delivery tracking (Sent / Delivered / 
 </div>
 
 ### Situational Awareness
-- Real-time **GPS**, **bearing**, and **distance** to each member  
+- Real-time **GPS**, **bearing**, and **distance** for each teammate  
 - **Battery telemetry** and **voltage readings**  
 - **Routing path** indicator (Direct / Multi-hop / Flood)  
-- **Role badges** for clarity (Police, Firefighter, Medic)  
-- Compass shows direction and proximity of all contacts and SAR markers  
+- **Role badges** for fast visual identification (Police, Firefighter, Medic)  
+- Compass guidance for nearby contacts and SAR markers  
 
 ---
 
@@ -181,35 +181,35 @@ Messages appear instantly on the map with delivery tracking (Sent / Delivered / 
 ### Tactical Display
 - **Offline vector maps (MBTiles)** with street, topo, and satellite layers  
 - **SAR event markers** — color-coded by type  
-- **Drawing tools** for quick visual planning (lines, rectangles, zones)  
-- **Compass integration** — precise direction and range to any object or person  
+- **Drawing tools** for routes, sectors, and quick visual planning  
+- **Compass integration** — precise direction and range to people, markers, and nodes  
 
-You can Plan, navigate, and execute — all offline.
+Plan, navigate, and coordinate without relying on network infrastructure.
 
 ---
 
 ## FAQ
 
 ### **Q: Is this a fork of MeshCore?**
-**A:** No. MeshCore SAR is a specialized **app** that works with existing MeshCore infrastructure and devices. Messages remain ASCII-only and human-readable — the app simply wraps UI widgets around recognized SAR message formats.
+**A:** No. MeshCore SAR is a specialized **application** built to work with existing MeshCore infrastructure and devices. Messages remain ASCII-only and human-readable; the app adds SAR-focused workflows and interface layers around those message formats.
 
 ### **Q: Can I use existing MeshCore repeaters in my area?**
-**A:** Yes! MeshCore SAR works with any existing MeshCore network. However, you'll need to know the correct frequency and settings.
+**A:** Yes. MeshCore SAR can operate on any existing MeshCore network as long as your team has the correct frequency and configuration.
 
 ### **Q: What if there are no repeaters nearby?**
-**A:** You can still communicate **companion-to-companion** directly, though range will be limited. Even adding just **one repeater** to your group significantly improves performance and coverage.
+**A:** You can still communicate device-to-device, but range will be more limited. Even a single repeater can improve coverage and reliability for the whole group.
 
 ### **Q: How does this work with SAR teams that have their own equipment?**
-**A:** SAR teams can deploy their own MeshCore infrastructure or integrate with existing networks.
+**A:** Teams can deploy their own MeshCore infrastructure, integrate with an existing network, or combine both approaches depending on the mission area.
 
 ### **Q: Will SAR features be merged into the main MeshCore app?**
-**A:** The core messaging remains compatible. SAR-specific features (offline maps, tactical drawing, compass navigation) are specialized tools that work best in a dedicated app.
+**A:** The messaging model stays compatible, but SAR-specific features such as offline maps, tactical drawing, and compass navigation are better served by a dedicated application.
 
 ---
 
 ## Download
 
-Get MeshCore SAR for your device:
+Explore MeshCore SAR on GitHub:
 
-**iOS / Windows / Linux / macOS**  
-[Download on GitHub](https://github.com/dz0ny/meshcore-sar)
+**Source, releases, and project updates**  
+[View on GitHub](https://github.com/dz0ny/meshcore-sar)

@@ -1,7 +1,7 @@
 ---
 title: "MeshCore SAR"
-subtitle: "Off-Grid LoRa Mesh Communication for Search & Rescue"
-description: "Resilient, offline communication for field operations — built on MeshCore and LoRa mesh networking. Provides messaging, GPS tracking, and tactical mapping when cellular and internet infrastructure fail."
+subtitle: "Off-Grid LoRa Coordination for Search & Rescue"
+description: "MeshCore SAR turns phones and MeshCore radios into a resilient field coordination system with messaging, GPS tracking, and offline tactical mapping."
 date: 2025-10-18
 draft: false
 layout: "single"
@@ -9,26 +9,26 @@ layout: "single"
 
 # MeshCore SAR
 
-**Off-Grid LoRa Mesh Communication for Search & Rescue**
+**Off-Grid LoRa Coordination for Search & Rescue**
 
-Resilient, offline communication for field operations — built on MeshCore and LoRa mesh networking. Transform ordinary smartphones into off-grid communication tools with messaging, GPS tracking, and tactical mapping even when cellular and internet infrastructure fail.
+MeshCore SAR is a field-ready communication layer for search and rescue teams operating beyond cellular coverage. Paired with MeshCore devices, it gives teams messaging, GPS positioning, and offline tactical mapping when normal infrastructure is unavailable.
 
 ## Features
 
-- **Off-Grid Communication** - Works without cellular or internet connectivity
-- **LoRa Mesh Networking** - Leverages MeshCore devices for long-range communication
-- **GPS Tracking** - Real-time location tracking with bearing and distance
-- **Tactical Mapping** - Offline vector maps with drawing tools
-- **SAR Markers** - Quick geo-tagged alerts (Found Person, Fire Location, Staging Area, Object Found)
-- **Team Coordination** - Direct messages, public channels, and persistent rooms
-- **Battery Telemetry** - Monitor team member device status
-- **Compass Navigation** - Direction and range to contacts and markers
-- **Role Badges** - Visual identification (Police, Firefighter, Medic)
-- **Multi-hop Routing** - Automatic message relay through the mesh network
+- **Off-Grid Communication** - Operates without cellular service or internet access
+- **LoRa Mesh Networking** - Uses MeshCore radios for long-range, multi-hop transport
+- **GPS Tracking** - Shows live location, bearing, and distance
+- **Tactical Mapping** - Combines offline vector maps with field drawing tools
+- **SAR Markers** - Sends fast geo-tagged alerts such as Found Person, Fire Location, Staging Area, and Object Found
+- **Team Coordination** - Supports direct messages, shared channels, and persistent rooms
+- **Battery Telemetry** - Surfaces device health for teammates in the field
+- **Compass Navigation** - Points operators toward contacts and markers
+- **Role Badges** - Makes team roles instantly visible
+- **Multi-hop Routing** - Relays messages automatically through the mesh
 
 ## Hardware Requirements
 
-**MeshCore SAR requires MeshCore devices** to transmit data over the LoRa mesh network. The app connects to these devices via Bluetooth, transforming your smartphone into a mesh communication terminal.
+**MeshCore SAR requires MeshCore devices** for LoRa transport. The app connects to those radios over Bluetooth and turns a smartphone into a practical field terminal for coordination and navigation.
 
 ### MeshCore Device Options
 - **Dedicated MeshCore nodes** — purpose-built for field deployment
@@ -36,39 +36,39 @@ Resilient, offline communication for field operations — built on MeshCore and 
 - **Client devices** — other team members' MeshCore units
 - **Room nodes** — persistent communication hubs
 
-**Seamless Integration**: MeshCore SAR works with any existing MeshCore network — no separate infrastructure needed.
+**Seamless Integration**: MeshCore SAR fits into existing MeshCore deployments, so teams can extend a current network or stand up a new one without changing the operating model.
 
 ## Communication Features
 
 ### Messages
-- **Direct Messages** – private one-to-one communication
-- **Public Channels** – broadcast updates across nodes
-- **Rooms** – persistent logs (e.g., *General*, *Emergency*)
+- **Direct Messages** – private one-to-one coordination
+- **Public Channels** – broad updates across the network
+- **Rooms** – persistent shared logs such as *General* or *Emergency*
 - **SAR Marker Messages** – geo-tagged alerts with delivery tracking
 
 ### Tactical Display
 - **Offline vector maps (MBTiles)** with street, topo, and satellite layers
-- **SAR event markers** — color-coded by type
-- **Drawing tools** for quick visual planning (lines, rectangles, zones)
-- **Compass integration** — precise direction and range to any object or person
+- **SAR event markers** — color-coded by incident type
+- **Drawing tools** for routes, search zones, and quick field annotations
+- **Compass integration** — precise direction and range to people, nodes, and markers
 
 ## Client Device Improvements
 
-The enhanced firmware brings reliability and usability improvements:
+The client-side improvements focus on reliability in the field and clearer at-a-glance information:
 
-- **Multi-language support** — interface available in multiple languages including Slovenian and Croatian
-- **Watchdog timer implementation** — automatic recovery from software freezes
-- **NRF52 hardware watchdog** — prevents system lockups
-- **Improved navigation** with redesigned screens
-- **Better visual hierarchy** with optimized layouts
-- **Enhanced GPS display** showing time since last fix alongside accuracy metrics
+- **Multi-language support** — includes localized interfaces such as Slovenian and Croatian
+- **Watchdog timer implementation** — recovers automatically from software freezes
+- **NRF52 hardware watchdog** — reduces the risk of device lockups
+- **Improved navigation** with redesigned device screens
+- **Better visual hierarchy** with cleaner layouts
+- **Enhanced GPS display** showing both fix age and accuracy
 
 ## Download
 
-Get MeshCore SAR for your device:
+Explore MeshCore SAR on GitHub:
 
-**iOS / Windows / Linux / macOS**  
-[Download on GitHub](https://github.com/dz0ny/meshcore-sar)
+**Source, releases, and project updates**  
+[View on GitHub](https://github.com/dz0ny/meshcore-sar)
 
 ---
 
