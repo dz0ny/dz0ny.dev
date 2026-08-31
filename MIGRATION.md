@@ -49,8 +49,8 @@ Done on 2026-08-31:
   deleted and `dz0ny.dev` attached to the Worker as a custom domain, so the
   domain now serves the Astro build. `wrangler.toml` claims the same route, so
   later deploys keep it.
-- `.github/workflows/build.yml` builds and type-checks every push, and deploys
-  to Cloudflare on pushes to `main`.
+- Deploys are run by hand with `bunx wrangler deploy`. There is no CI build:
+  `.github/workflows/hugo.yml` is deleted and no Actions workflow replaced it.
 - `.github/workflows/hugo.yml` was deleted, so nothing publishes to GitHub Pages
   any more.
 
@@ -69,21 +69,14 @@ conflicting DNS record while it is attached.
 
 ### Still to do
 
-1. **Merge `astro-migration` into `main`.** The live site is currently serving a
-   build made from that branch. `main` still holds the Hugo tree, so a push to
-   `main` today would fail the build step before it ever reached the deploy job.
-2. **Add two repository secrets** so the deploy job can authenticate:
-   `CLOUDFLARE_API_TOKEN` (a token with Workers Scripts:Edit and Workers
-   Routes:Edit on this account) and `CLOUDFLARE_ACCOUNT_ID`
-   (`f5c28b6107ec80813d4827fcd46a4eab`).
-3. **Turn off GitHub Pages** in the repository settings. The workflow is gone,
+1. **Turn off GitHub Pages** in the repository settings. The workflow is gone,
    but the Pages site itself is still configured.
-4. **Optional:** Workers Builds instead of Actions. That needs the Cloudflare
-   GitHub App installed on the repo through the dashboard, which an API token
-   cannot do. If you set it up, use this build command so git history survives
-   the shallow clone:
+2. **Optional:** Workers Builds, if you want pushes to deploy on their own.
+   That needs the Cloudflare GitHub App installed on the repo through the
+   dashboard, which an API token cannot do. If you set it up, use this build
+   command so git history survives the shallow clone:
    ```sh
    git fetch --unshallow || true && bun run build
    ```
-5. **Optional:** enable Markdown for Agents on the zone (AI Crawl Control). It is
+3. **Optional:** enable Markdown for Agents on the zone (AI Crawl Control). It is
    a Cloudflare setting, not code, and needs a paid plan; `dz0ny.dev` is on Free.
