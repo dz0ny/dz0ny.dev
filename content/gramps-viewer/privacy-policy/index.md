@@ -6,32 +6,30 @@ draft: false
 
 # Privacy Policy
 
-**Effective Date:** November 11, 2025
+Effective date: November 11, 2025
 
-**GRAMPS Viewer** ("we", "our", or "us") respects your privacy and is committed to protecting it. This Privacy Policy explains how we handle information when you use our mobile application ("App").
+This policy explains how GRAMPS Viewer ("we", "our", or "us") handles information when you use the mobile application ("App").
 
-## Information We Collect
+## Information we collect
 
-We **do not collect, store, or share any personal information**. GRAMPS Viewer does not require you to sign in, create an account, or provide any personal data. All app functionality operates entirely on your device.
+We do not collect, store, or share any personal information. GRAMPS Viewer does not ask you to sign in, create an account, or provide personal data. Everything the app does runs on your device.
 
-## Data Storage and Access
+## Data storage and access
 
-All data you open or view through GRAMPS Viewer remains **on your device**. We do not transmit or access your files, genealogy data, or any other information.
+All data you open or view in GRAMPS Viewer stays on your device. We do not transmit or access your files, genealogy data, or anything else.
 
-## Third-Party Services
+## Third-party services
 
-GRAMPS Viewer does **not** use third-party analytics, advertising networks, or tracking tools. No information is shared with external services.
+GRAMPS Viewer does not use third-party analytics, advertising networks, or tracking tools. No information is shared with external services.
 
-## Children's Privacy
+## Children's privacy
 
-GRAMPS Viewer does not knowingly collect or process any data from users of any age, including children.
+GRAMPS Viewer does not knowingly collect or process data from users of any age, including children.
 
-## Changes to This Policy
+## Changes to this policy
 
-If we make changes to this Privacy Policy, we will update this page with the new effective date. Updates will continue to reflect our commitment to privacy and data protection.
+If this policy changes, we will update this page and the effective date above.
 
-## Contact Us
+## Contact us
 
-If you have any questions or concerns about this Privacy Policy, please contact us at:
-
-📧 **hey@dz0ny.dev**
+Questions or concerns about this policy: hey@dz0ny.dev

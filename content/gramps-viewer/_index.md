@@ -9,42 +9,32 @@ layout: "single"
 
 # GRAMPS Viewer
 
-**Modern Genealogy Viewer**
-
-A Flutter application for viewing genealogy data from Gramps XML files. View your family tree with support for multiple sources, change tracking, and beautiful custom rendering.
+A Flutter app for reading genealogy data from Gramps XML files. It shows your family tree, keeps track of what changed, and works with several data sources at once.
 
 ## Features
 
-- **Multiple Source Support** - Import and manage genealogy data from various Gramps XML files
-- **Change Tracking** - Keep track of modifications and updates to your family tree data
-- **Beautiful Custom Rendering** - Clean, intuitive interface with custom-designed views
-- **Family Tree Visualization** - Interactive family tree display
-- **Person Details** - Comprehensive individual profile pages
-- **Dark Mode Support** - Comfortable viewing in any lighting condition
-- **Last Name Browsing** - Organized view by family surnames
-- **Source Manager** - Manage and organize your genealogy data sources
-- **Updates Page** - Track recent changes and modifications
+- Import and manage genealogy data from several Gramps XML files
+- Track modifications and updates to your family tree data
+- Interactive family tree display with custom-designed views
+- Detailed profile pages for each person
+- Browse by surname
+- Source manager for organizing your data sources
+- Updates page listing recent changes
+- Dark mode
 
 ## Download
 
-Get GRAMPS Viewer for your device:
+iOS (TestFlight beta): [Join the beta](https://testflight.apple.com/join/ZrAymRE5)
 
-**iOS (TestFlight Beta)**  
-[Join iOS Beta on TestFlight](https://testflight.apple.com/join/ZrAymRE5)
+Android: [Download the APK](https://dz0ny.github.io/gramps-go/android/app-release-5f26604.apk). You need to enable "Install from unknown sources" in Android settings.
 
-**Android**  
-[Download APK](https://dz0ny.github.io/gramps-go/android/app-release-5f26604.apk)  
-*Note: Enable "Install from unknown sources" in Android settings*
-
-**Linux**  
-[Download Linux Build](https://dz0ny.github.io/gramps-go/linux/gramps-viewer-linux-5f26604.tar.gz)  
-*Extract and run: `./gramps_viewer`*
+Linux: [Download the build](https://dz0ny.github.io/gramps-go/linux/gramps-viewer-linux-5f26604.tar.gz), extract it, and run `./gramps_viewer`.
 
 ---
 
-## Additional Information
+## Additional information
 
-- [Privacy Policy](/gramps-viewer/privacy-policy/) - Learn how we protect your data
-- [Contact](/gramps-viewer/contact/) - Get in touch with questions or feedback
+- [Privacy Policy](/gramps-viewer/privacy-policy/): how the app handles your data
+- [Contact](/gramps-viewer/contact/): questions and feedback
 
-Built with Flutter | [Open Source on GitHub](https://github.com/dz0ny/gramps-go)
+Built with Flutter. [Source on GitHub](https://github.com/dz0ny/gramps-go)

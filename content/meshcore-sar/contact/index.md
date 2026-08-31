@@ -6,29 +6,20 @@ draft: false
 
 # Contact
 
-Thank you for using **MeshCore SAR**!
+Questions, feedback, or support for MeshCore SAR: hey@dz0ny.dev
 
-## Get in Touch
+## Reporting an issue
 
-For questions, feedback, or support regarding MeshCore SAR, please reach out:
+If something is broken or you want a feature, include:
 
-📧 **hey@dz0ny.dev**
-
-## Support
-
-If you encounter any issues or have feature requests, please include:
 - Your device model and operating system version
-- MeshCore device firmware version (if applicable)
-- A description of the issue or request
-- Steps to reproduce (if reporting a bug)
-- Network configuration details (frequency, mesh settings)
+- MeshCore device firmware version, if relevant
+- What went wrong, or what you would like the app to do
+- Steps to reproduce the problem, if it is a bug
+- Network configuration details such as frequency and mesh settings
 
-## SAR Team Integration
+## SAR team deployments
 
-For organizations interested in deploying MeshCore SAR for search and rescue operations:
-- Infrastructure planning and deployment guidance
-- Training and setup assistance
-- Custom configuration support
-- Integration with existing MeshCore networks
+For organizations deploying MeshCore SAR in search and rescue work, I can help with infrastructure planning and deployment, training and setup, custom configuration, and integration with an existing MeshCore network.
 
-We appreciate your feedback and will respond as soon as possible.
+I read everything and reply as soon as I can.

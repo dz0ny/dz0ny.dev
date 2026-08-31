@@ -6,19 +6,14 @@ draft: false
 
 # Contact
 
-Thank you for using **GRAMPS Viewer**!
+Questions, feedback, or support for GRAMPS Viewer: hey@dz0ny.dev
 
-## Get in Touch
+## Reporting an issue
 
-For questions, feedback, or support regarding GRAMPS Viewer, please reach out:
+If something is broken or you want a feature, include:
 
-📧 **hey@dz0ny.dev**
-
-## Support
-
-If you encounter any issues or have feature requests, please include:
 - Your device model and operating system version
-- A description of the issue or request
-- Steps to reproduce (if reporting a bug)
+- What went wrong, or what you would like the app to do
+- Steps to reproduce the problem, if it is a bug
 
-We appreciate your feedback and will respond as soon as possible.
+I read everything and reply as soon as I can.

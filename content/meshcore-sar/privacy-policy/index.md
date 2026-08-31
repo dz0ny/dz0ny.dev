@@ -6,48 +6,48 @@ draft: false
 
 # Privacy Policy
 
-**Effective Date:** October 18, 2025
+Effective date: October 18, 2025
 
-**MeshCore SAR** ("we", "our", or "us") respects your privacy and is committed to protecting it. This Privacy Policy explains how we handle information when you use our mobile application ("App").
+This policy explains how MeshCore SAR ("we", "our", or "us") handles information when you use the mobile application ("App").
 
-## Information We Collect
+## Information we collect
 
-We **do not collect, store, or share any personal information**. MeshCore SAR does not require you to sign in, create an account, or provide any personal data. All app functionality operates entirely on your device and through the local MeshCore mesh network.
+We do not collect, store, or share any personal information. MeshCore SAR does not ask you to sign in, create an account, or provide personal data. Everything the app does runs on your device and across the local MeshCore mesh network.
 
-## Data Storage and Access
+## Data storage and access
 
-All data you create, send, or receive through MeshCore SAR remains **on your device and within the local mesh network**. We do not transmit or access your messages, location data, contacts, or any other information to external servers.
+All data you create, send, or receive in MeshCore SAR stays on your device and within the local mesh network. We do not send your messages, location data, contacts, or anything else to external servers, and we cannot access them.
 
-### Local Mesh Communication
+### Local mesh communication
 
-Messages and location data are transmitted only through the **MeshCore LoRa mesh network** between devices you've paired with. This communication:
-- Occurs peer-to-peer or through mesh repeaters
+Messages and location data travel only over the MeshCore LoRa mesh network, between devices you have paired with. That traffic:
+
+- Moves peer to peer or through mesh repeaters
 - Does not route through the internet or cellular networks
-- Is not stored on any centralized servers
-- Remains within your local mesh network
+- Is not stored on any centralized server
+- Stays within your local mesh network
 
-## Third-Party Services
+## Third-party services
 
-MeshCore SAR does **not** use third-party analytics, advertising networks, or tracking tools. No information is shared with external services.
+MeshCore SAR does not use third-party analytics, advertising networks, or tracking tools. No information is shared with external services.
 
-## Location Data
+## Location data
 
-MeshCore SAR uses GPS location data to provide position tracking and navigation features. This location data:
-- Remains on your device
-- Is only shared with other devices on your local mesh network when you choose to transmit it
-- Is not sent to any external servers or services
-- Can be controlled through the app's settings
+MeshCore SAR uses GPS location data for position tracking and navigation. That location data:
 
-## Children's Privacy
+- Stays on your device
+- Reaches other devices on your local mesh network only when you choose to transmit it
+- Is never sent to external servers or services
+- Can be controlled in the app's settings
 
-MeshCore SAR does not knowingly collect or process any data from users of any age, including children.
+## Children's privacy
 
-## Changes to This Policy
+MeshCore SAR does not knowingly collect or process data from users of any age, including children.
 
-If we make changes to this Privacy Policy, we will update this page with the new effective date. Updates will continue to reflect our commitment to privacy and data protection.
+## Changes to this policy
 
-## Contact Us
+If this policy changes, we will update this page and the effective date above.
 
-If you have any questions or concerns about this Privacy Policy, please contact us at:
+## Contact us
 
-📧 **hey@dz0ny.dev**
+Questions or concerns about this policy: hey@dz0ny.dev
