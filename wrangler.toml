@@ -1,0 +1,22 @@
+name = 'hakuto-site'
+main="worker/index.js"
+compatibility_date = "2026-06-24"
+preview_urls = true
+workers_dev = true
+
+[observability.logs]
+enabled = false
+
+[placement]
+mode = "smart"
+
+[assets]
+directory = "./dist/client"
+not_found_handling = "404-page"
+html_handling = "force-trailing-slash"
+run_worker_first = ["/~*"]
+
+# Routes are template placeholders. Uncomment and set your domain when ready.
+# [[routes]]
+# pattern = "example.com"
+# custom_domain = true

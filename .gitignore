@@ -1,7 +1,46 @@
-.hugo_build.lock
-exampleSite/resources/
-exampleSite/.hugo_build.lock
-public
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+.astro
+.wrangler
+.cache
+.next
+.out
+.astro
+.osgrep
+.hakuto
+.claude
+.ports
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
 .DS_Store
-resources
-*.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Devenv
+.devenv
+.devenv*
+devenv.local.nix
+
+# direnv
+.direnv
+
+# pre-commit
+.pre-commit-config.yaml
+.cachebro

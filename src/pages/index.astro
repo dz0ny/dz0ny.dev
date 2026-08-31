@@ -1,0 +1,38 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { Button } from "@/components/ui/button";
+import { Picture } from "astro:assets";
+import hakutoLogo from "@/assets/hakuto-logo.png";
+import { identitySchema } from "@/lib/schema";
+---
+
+<Layout description="Astro + shadcn/ui website template for Hakuto." schema={identitySchema(Astro.site)}>
+  <section class="mx-auto max-w-3xl px-4 py-16 text-center">
+    <div class="mx-auto mb-8 w-80">
+      <Picture
+        src={hakutoLogo}
+        alt="Hakuto Landing Page Builder"
+        formats={['webp']}
+        width={320}
+        widths={[320, 640]}
+        sizes="320px"
+        loading="eager"
+        class="h-auto w-full"
+      />
+    </div>
+    <h1 class="text-4xl font-bold tracking-tight">Build with Astro + shadcn/ui</h1>
+    <p class="mt-4 text-muted-foreground">
+      This is a template for Hakuto sites. Edit content in <code>src/pages</code> and
+      components in <code>src/components</code>. See README for setup and deploy.
+    </p>
+    <div class="mt-8 flex items-center justify-center gap-3">
+      <Button size="lg">Example Button</Button>
+      <a
+        href="https://astro.build"
+        target="_blank"
+        rel="noreferrer"
+        class="inline-flex h-11 items-center rounded-md border px-5 text-sm font-medium hover:bg-accent hover:text-accent-foreground"
+      >Astro Docs</a>
+    </div>
+  </section>
+</Layout>

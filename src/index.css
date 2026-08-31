@@ -1,0 +1,227 @@
+@import 'tailwindcss';
+
+@plugin 'tailwindcss-animate';
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+  Workbench — dz0ny.dev
+  Technology + Minimalist. Stark light ground, cool near-black ink, one cobalt
+  accent. Dials: VARIANCE 6 · MOTION 5 · DENSITY 5. See site-specification.md.
+  All colors are HSL triples so the shadcn tokens below can reuse them.
+*/
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+  @media (width >= --theme(--breakpoint-sm)) {
+    max-width: none;
+  }
+  @media (width >= 1280px) {
+    max-width: 1180px;
+  }
+}
+
+@theme {
+  /* shadcn surface tokens */
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  /* Workbench palette — the tokens pages actually reach for.
+     60 ground/surface · 30 ink · 10 cobalt. */
+  --color-ground: hsl(var(--ground));
+  --color-surface: hsl(var(--surface));
+  --color-rule: hsl(var(--rule));
+  --color-rule-strong: hsl(var(--rule-strong));
+  --color-ink: hsl(var(--ink));
+  --color-ink-muted: hsl(var(--ink-muted));
+  --color-ink-faint: hsl(var(--ink-faint));
+  --color-cobalt: hsl(var(--cobalt));
+  --color-cobalt-hover: hsl(var(--cobalt-hover));
+  --color-cobalt-soft: hsl(var(--cobalt-soft));
+
+  /* Type: grotesque display, humanist body, mono as the metadata voice */
+  --font-display: var(--font-display-family), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-body-family), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-code-family), ui-monospace, monospace;
+
+  /* DENSITY 5 — standard marketing rhythm, tighter than airy */
+  --spacing-section: 5rem;
+  --spacing-section-lg: 7rem;
+
+  /* Sharp edges: technology language sits at 0–4px */
+  --radius: 0.25rem;
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 1px);
+  --radius-sm: calc(var(--radius) - 2px);
+
+  /* MOTION 5 — snappy, 120–180ms, plus one page-load stagger */
+  --animate-rise: rise 0.5s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+  }
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: hsl(var(--rule));
+  }
+
+  :root {
+    --ground: 220 33% 98%;
+    --surface: 216 22% 95.5%;
+    --rule: 213 14% 87%;
+    --rule-strong: 218 10% 77.5%;
+    --ink: 214 26% 10.5%;
+    --ink-muted: 217 10% 36.5%;
+    --ink-faint: 215 7.5% 45%;
+    --cobalt: 213 89% 43%;
+    --cobalt-hover: 214 100% 35%;
+    --cobalt-soft: 215 100% 95%;
+
+    /* shadcn aliases onto the same palette */
+    --background: var(--ground);
+    --foreground: var(--ink);
+    --card: var(--ground);
+    --card-foreground: var(--ink);
+    --popover: var(--ground);
+    --popover-foreground: var(--ink);
+    --primary: var(--cobalt);
+    --primary-foreground: 0 0% 100%;
+    --secondary: var(--surface);
+    --secondary-foreground: var(--ink);
+    --muted: var(--surface);
+    --muted-foreground: var(--ink-muted);
+    --accent: var(--cobalt-soft);
+    --accent-foreground: var(--cobalt-hover);
+    --destructive: 0 72% 42%;
+    --destructive-foreground: 0 0% 100%;
+    --border: var(--rule);
+    --input: var(--rule-strong);
+    --ring: var(--cobalt);
+  }
+
+  .dark {
+    --ground: 216 25% 8%;
+    --surface: 215 20% 12%;
+    --rule: 216 15% 20%;
+    --rule-strong: 217 12% 29%;
+    --ink: 214 20% 93%;
+    --ink-muted: 217 10% 68%;
+    --ink-faint: 217 7.5% 53%;
+    --cobalt: 216 94% 68%;
+    --cobalt-hover: 212 100% 74.5%;
+    --cobalt-soft: 215 44% 16%;
+
+    --primary-foreground: 216 25% 8%;
+    --destructive: 0 62% 52%;
+    --accent-foreground: var(--cobalt);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: hsl(var(--ground));
+    color: hsl(var(--ink));
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: hsl(var(--cobalt));
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid hsl(var(--cobalt));
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  /* The mono metadata voice: dates, tags, section labels, nav. */
+  .label-mono {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: hsl(var(--ink-muted));
+  }
+
+  /* Hairline rule that reads as structure rather than decoration. */
+  .rule-top {
+    border-top: 1px solid hsl(var(--rule));
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .entrance {
+    animation: var(--animate-rise);
+  }
+
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(12px);
+    transition:
+      opacity 0.45s cubic-bezier(0.2, 0.7, 0.3, 1),
+      transform 0.45s cubic-bezier(0.2, 0.7, 0.3, 1);
+  }
+
+  [data-reveal].in {
+    opacity: 1;
+    transform: none;
+  }
+}
