@@ -1,6 +1,8 @@
-name: Build
+name: Build and deploy
 
-on: push
+on:
+  push:
+  workflow_dispatch:
 
 jobs:
   build:
@@ -9,6 +11,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v5
+        with:
+          # Cloudflare and shallow clones both lose git history, and anything
+          # deriving a date from it then reports the deploy date on every page.
+          fetch-depth: 0
 
       - uses: actions/setup-node@v5
         with:
@@ -24,13 +30,47 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-bun-
 
-      - name: Check versions
-        run: |
-          node --version
-          bun --version
+      - name: Install dependencies
+        run: bun i --frozen-lockfile
+
+      - name: Type check
+        run: bun run check
+
+      - name: Build
+        run: bun run build
+
+      - name: Upload build
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/client
+          retention-days: 7
+
+  deploy:
+    name: Deploy to Cloudflare Workers
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    # Only one deploy at a time; never cancel one mid-flight.
+    concurrency:
+      group: deploy-production
+      cancel-in-progress: false
+
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - uses: oven-sh/setup-bun@v2
 
       - name: Install dependencies
         run: bun i --frozen-lockfile
 
       - name: Build
         run: bun run build
+
+      - name: Deploy
+        run: bunx wrangler deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

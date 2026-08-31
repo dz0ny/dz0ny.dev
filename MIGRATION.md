@@ -39,25 +39,51 @@ Two Hugo-only constructs were removed from the MeshCore SAR post:
 Captions for the four client-device photos were rewritten to describe what the
 photos actually show; the originals were "Client device view 1" through "4".
 
-## Deploy — manual steps
+## Deploy — current state
 
-The code is ready; the hosting move is not automatic.
+Done on 2026-08-31:
 
-1. **Create the Worker.** In Cloudflare, connect this repo through Workers
-   Builds, or run `bunx wrangler deploy` locally once to create `dz0ny-dev`.
-2. **Set the build command** in the Cloudflare project to:
+- Worker `dz0ny-dev` created in account `My Account` and deployed with
+  `wrangler deploy`. Preview URL: https://dz0ny-dev.dz0ny.workers.dev
+- The apex `dz0ny.dev` was a proxied CNAME to `dz0ny.github.io`. That record was
+  deleted and `dz0ny.dev` attached to the Worker as a custom domain, so the
+  domain now serves the Astro build. `wrangler.toml` claims the same route, so
+  later deploys keep it.
+- `.github/workflows/build.yml` builds and type-checks every push, and deploys
+  to Cloudflare on pushes to `main`.
+- `.github/workflows/hugo.yml` was deleted, so nothing publishes to GitHub Pages
+  any more.
+
+### Rollback
+
+To put the old GitHub Pages site back, recreate the apex record and detach the
+Worker domain:
+
+```sh
+# CNAME dz0ny.dev -> dz0ny.github.io, proxied, TTL auto (record was
+# 19cd5d5c8f3151bbe5b5adfa1e4bb8a2 in zone bfebc0425af5556166912aa72f9c6ea9)
+```
+
+The Worker custom domain has to be removed first; Cloudflare refuses to create a
+conflicting DNS record while it is attached.
+
+### Still to do
+
+1. **Merge `astro-migration` into `main`.** The live site is currently serving a
+   build made from that branch. `main` still holds the Hugo tree, so a push to
+   `main` today would fail the build step before it ever reached the deploy job.
+2. **Add two repository secrets** so the deploy job can authenticate:
+   `CLOUDFLARE_API_TOKEN` (a token with Workers Scripts:Edit and Workers
+   Routes:Edit on this account) and `CLOUDFLARE_ACCOUNT_ID`
+   (`f5c28b6107ec80813d4827fcd46a4eab`).
+3. **Turn off GitHub Pages** in the repository settings. The workflow is gone,
+   but the Pages site itself is still configured.
+4. **Optional:** Workers Builds instead of Actions. That needs the Cloudflare
+   GitHub App installed on the repo through the dashboard, which an API token
+   cannot do. If you set it up, use this build command so git history survives
+   the shallow clone:
    ```sh
    git fetch --unshallow || true && bun run build
    ```
-   Cloudflare checks out a shallow clone, so anything deriving a date from git
-   history gets the deploy date on every page without this.
-3. **Point the domain.** `wrangler.toml` claims `dz0ny.dev` as a custom domain;
-   the zone has to exist in the same Cloudflare account first.
-4. **Retire GitHub Pages** once Cloudflare serves the domain. The old workflow
-   `.github/workflows/hugo.yml` is already deleted, so Pages will go stale on
-   its own, but the Pages site should be turned off in repo settings.
-5. **Optional:** enable Markdown for Agents on the zone (AI Crawl Control). It
-   is a Cloudflare setting, not code, and needs a paid plan.
-
-`.github/workflows/build.yml` only builds and type-checks on push. It does not
-deploy, and it does not need any secrets.
+5. **Optional:** enable Markdown for Agents on the zone (AI Crawl Control). It is
+   a Cloudflare setting, not code, and needs a paid plan; `dz0ny.dev` is on Free.
