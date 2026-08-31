@@ -225,3 +225,180 @@
     transform: none;
   }
 }
+
+/*
+  Long-form article styling. Tailwind's typography plugin isn't installed, and
+  the type scale here is specific enough to the direction that a generic prose
+  reset would fight it.
+*/
+@layer components {
+  .article {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: hsl(var(--ink));
+  }
+
+  .article > * + * {
+    margin-top: 1.25em;
+  }
+
+  .article h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.75rem;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-top: 2.5em;
+    padding-top: 1em;
+    border-top: 1px solid hsl(var(--rule));
+  }
+
+  .article h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: -0.01em;
+    margin-top: 2em;
+  }
+
+  .article h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1.0625rem;
+    margin-top: 1.75em;
+  }
+
+  .article a {
+    color: hsl(var(--cobalt));
+    text-decoration: underline;
+    text-decoration-color: hsl(var(--cobalt) / 0.3);
+    text-underline-offset: 3px;
+    transition: text-decoration-color 0.15s;
+  }
+
+  .article a:hover {
+    text-decoration-color: hsl(var(--cobalt));
+  }
+
+  .article ul,
+  .article ol {
+    padding-left: 1.25rem;
+  }
+
+  .article ul {
+    list-style: none;
+  }
+
+  .article ul > li {
+    position: relative;
+  }
+
+  .article ul > li::before {
+    content: "—";
+    position: absolute;
+    left: -1.25rem;
+    color: hsl(var(--ink-faint));
+  }
+
+  .article ol {
+    list-style: decimal;
+  }
+
+  .article li + li {
+    margin-top: 0.4em;
+  }
+
+  .article blockquote {
+    border-left: 2px solid hsl(var(--cobalt));
+    padding-left: 1rem;
+    color: hsl(var(--ink-muted));
+  }
+
+  .article hr {
+    border: 0;
+    border-top: 1px solid hsl(var(--rule));
+    margin-block: 2.5em;
+  }
+
+  .article :not(pre) > code {
+    font-family: var(--font-mono);
+    font-size: 0.875em;
+    background: hsl(var(--surface));
+    border: 1px solid hsl(var(--rule));
+    border-radius: var(--radius-sm);
+    padding: 0.1em 0.35em;
+  }
+
+  .article pre {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    border: 1px solid hsl(var(--rule));
+    border-radius: var(--radius);
+    padding: 1rem;
+    overflow-x: auto;
+  }
+
+  .article table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9375rem;
+    display: block;
+    overflow-x: auto;
+  }
+
+  .article th,
+  .article td {
+    border-bottom: 1px solid hsl(var(--rule));
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+
+  .article th {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: hsl(var(--ink-muted));
+  }
+
+  .article img {
+    border: 1px solid hsl(var(--rule));
+    border-radius: var(--radius);
+  }
+
+  /* Screenshot runs grouped by the rehype plugin. */
+  .article .shots {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .article .shots figure {
+    margin: 0;
+  }
+
+  .article .shots img {
+    width: 100%;
+    height: auto;
+  }
+
+  .article .shots figcaption {
+    margin-top: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    line-height: 1.4;
+    color: hsl(var(--ink-muted));
+  }
+}
+
+/* Shiki dual themes: the light palette is inline, the dark one swaps in here. */
+.dark .astro-code,
+.dark .astro-code span {
+  color: var(--shiki-dark) !important;
+  background-color: var(--shiki-dark-bg) !important;
+  font-style: var(--shiki-dark-font-style) !important;
+  font-weight: var(--shiki-dark-font-weight) !important;
+  text-decoration: var(--shiki-dark-text-decoration) !important;
+}

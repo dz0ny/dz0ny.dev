@@ -1,38 +1,103 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import { Button } from "@/components/ui/button";
-import { Picture } from "astro:assets";
-import hakutoLogo from "@/assets/hakuto-logo.png";
+import { getPosts } from "@/lib/posts";
+import { isoDate, SITE_DESCRIPTION, SITE_NAME } from "@/lib/site";
 import { identitySchema } from "@/lib/schema";
+import PostRow from "@/components/PostRow.astro";
+
+const posts = await getPosts();
+const recent = posts.slice(0, 6);
+
+const projects = [
+	{
+		href: "/meshcore-sar/",
+		name: "MeshCore SAR",
+		blurb:
+			"Off-grid LoRa coordination for search and rescue: messaging, GPS positioning, and offline tactical mapping over MeshCore radios.",
+		meta: "Flutter · LoRa · 2025",
+	},
+	{
+		href: "/gramps-viewer/",
+		name: "GRAMPS Viewer",
+		blurb:
+			"Reads genealogy data from Gramps XML files, tracks what changed, and handles several sources at once.",
+		meta: "Flutter · iOS, Android, Linux · 2025",
+	},
+];
 ---
 
-<Layout description="Astro + shadcn/ui website template for Hakuto." schema={identitySchema(Astro.site)}>
-  <section class="mx-auto max-w-3xl px-4 py-16 text-center">
-    <div class="mx-auto mb-8 w-80">
-      <Picture
-        src={hakutoLogo}
-        alt="Hakuto Landing Page Builder"
-        formats={['webp']}
-        width={320}
-        widths={[320, 640]}
-        sizes="320px"
-        loading="eager"
-        class="h-auto w-full"
-      />
+<Layout schema={identitySchema(Astro.site)}>
+  <!-- Asymmetric Split 8/4 — the signature move -->
+  <section class="grid gap-12 md:grid-cols-12 md:gap-8">
+    <div class="md:col-span-8">
+      <h1 class="entrance font-display text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
+        {SITE_NAME}
+      </h1>
+      <p class="entrance mt-6 max-w-xl text-lg leading-relaxed text-ink-muted [animation-delay:80ms]">
+        {SITE_DESCRIPTION} Principal engineer at Niteo. Hacker from the crib,
+        mostly by taking things apart. Electronics, mountain biking, and FPV
+        when I am away from a keyboard.
+      </p>
+      <div class="entrance mt-8 flex flex-wrap items-center gap-3 [animation-delay:160ms]">
+        <a
+          href="/posts/"
+          class="inline-flex items-center gap-2 rounded-sm bg-cobalt px-5 py-2.5 text-sm font-semibold text-white transition-all duration-150 hover:-translate-y-0.5 hover:bg-cobalt-hover active:scale-[0.98]"
+        >
+          Read the blog <span aria-hidden="true">&rarr;</span>
+        </a>
+        <a
+          href="https://github.com/dz0ny"
+          class="inline-flex items-center gap-2 rounded-sm border border-rule-strong px-5 py-2.5 text-sm font-semibold text-ink transition-colors duration-150 hover:border-cobalt hover:text-cobalt"
+        >
+          GitHub
+        </a>
+      </div>
     </div>
-    <h1 class="text-4xl font-bold tracking-tight">Build with Astro + shadcn/ui</h1>
-    <p class="mt-4 text-muted-foreground">
-      This is a template for Hakuto sites. Edit content in <code>src/pages</code> and
-      components in <code>src/components</code>. See README for setup and deploy.
-    </p>
-    <div class="mt-8 flex items-center justify-center gap-3">
-      <Button size="lg">Example Button</Button>
-      <a
-        href="https://astro.build"
-        target="_blank"
-        rel="noreferrer"
-        class="inline-flex h-11 items-center rounded-md border px-5 text-sm font-medium hover:bg-accent hover:text-accent-foreground"
-      >Astro Docs</a>
+
+    <div class="entrance md:col-span-4 md:border-l md:border-rule md:pl-8 [animation-delay:120ms]">
+      <p class="label-mono mb-4">Latest</p>
+      <ul class="space-y-3 font-mono text-sm">
+        {
+          recent.map((post) => (
+            <li class="flex gap-4">
+              <time datetime={post.data.date.toISOString()} class="shrink-0 text-ink-faint">
+                {isoDate(post.data.date).slice(0, 7)}
+              </time>
+              <a href={`/posts/${post.id}/`} class="text-ink transition-colors hover:text-cobalt">
+                {post.data.title}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
     </div>
+  </section>
+
+  <!-- Column list: the quiet workhorse, not dressed up as cards -->
+  <section class="mt-24" data-reveal>
+    <p class="label-mono mb-6">Projects</p>
+    <div class="grid gap-px overflow-hidden border border-rule bg-rule sm:grid-cols-2">
+      {
+        projects.map((project) => (
+          <a href={project.href} class="group block bg-ground p-6 transition-colors hover:bg-surface">
+            <h2 class="font-display text-xl font-bold tracking-tight transition-colors group-hover:text-cobalt">
+              {project.name}
+            </h2>
+            <p class="mt-2 text-sm leading-relaxed text-ink-muted">{project.blurb}</p>
+            <p class="mt-4 font-mono text-xs text-ink-faint">{project.meta}</p>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="mt-24" data-reveal>
+    <div class="mb-2 flex items-baseline justify-between gap-4">
+      <p class="label-mono">Writing</p>
+      <a href="/posts/" class="font-mono text-xs text-cobalt transition-colors hover:text-cobalt-hover">
+        All {posts.length} posts &rarr;
+      </a>
+    </div>
+    {posts.slice(0, 4).map((post) => <PostRow post={post} />)}
   </section>
 </Layout>

@@ -1,0 +1,35 @@
+---
+import type { GetStaticPaths } from "astro";
+import Layout from "@/layouts/Layout.astro";
+import PostRow from "@/components/PostRow.astro";
+import { getPosts } from "@/lib/posts";
+
+export const getStaticPaths = (async () => {
+	const posts = await getPosts();
+	const tags = [...new Set(posts.flatMap((post) => post.data.tags))];
+	return tags.map((tag) => ({
+		params: { tag },
+		props: { tag, posts: posts.filter((post) => post.data.tags.includes(tag)) },
+	}));
+}) satisfies GetStaticPaths;
+
+const { tag, posts } = Astro.props;
+---
+
+<Layout title={`Posts tagged ${tag}`} description={`Every post on dz0ny.dev tagged ${tag}.`}>
+  <p class="label-mono mb-4">Tag</p>
+  <h1 class="font-display text-4xl font-bold tracking-tight sm:text-5xl">{tag}</h1>
+  <p class="mt-4 text-ink-muted">
+    {posts.length} {posts.length === 1 ? "post" : "posts"}.
+  </p>
+
+  <div class="mt-10 max-w-3xl">
+    {posts.map((post) => <PostRow post={post} />)}
+  </div>
+
+  <nav class="mt-16 border-t border-rule pt-6">
+    <a href="/posts/" class="font-mono text-xs text-cobalt transition-colors hover:text-cobalt-hover">
+      &larr; All posts
+    </a>
+  </nav>
+</Layout>

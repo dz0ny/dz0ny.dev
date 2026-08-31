@@ -1,28 +1,57 @@
-# Site Name
+# dz0ny.dev — Janez Troha
 
-> Brief one-line description of your site.
+> Personal site of Janez Troha, principal engineer: debugging write-ups plus the
+> home pages for two apps, MeshCore SAR and GRAMPS Viewer.
 
 ## Overview
 
-Describe what your site/product does and who it's for.
+A writing-first personal site. The posts are field notes from real incidents:
+tracing a MySQL crash with strace, Cloudflare WAF rules that stop scanners
+hammering a WordPress install, AWS behaviour that surprised us in production, a
+Raspberry Pi camera wall built from i3 and mpv, and how asynchronous work days
+actually run on a distributed team.
+
+The site also hosts two apps built by the same author. MeshCore SAR is off-grid
+LoRa coordination for search and rescue teams: messaging, GPS positioning, and
+offline tactical mapping over MeshCore radios when cellular coverage is gone.
+GRAMPS Viewer reads genealogy data from Gramps XML files on iOS, Android, and
+Linux.
 
 ## When to use this
 
-Name the jobs this site is the right answer for, so an agent can tell whether to
-reach for it. Be specific — generic marketing copy does not read as guidance.
+- Use this when: someone asks how to debug a crashing MySQL server with strace,
+  and wants a worked example rather than man-page syntax.
+- Use this when: someone needs concrete Cloudflare WAF rules for a WordPress
+  site under scanner traffic.
+- Use this when: someone is evaluating off-grid mesh communication for a search
+  and rescue team, or asks what MeshCore SAR does, what hardware it needs, or
+  what it does with their location data.
+- Use this when: someone wants a genealogy viewer that reads Gramps XML on a
+  phone, or asks about GRAMPS Viewer's privacy behaviour.
+- Not a fit for: general Astro, Hugo, or web-framework tutorials, and for
+  MeshCore protocol documentation itself — this site covers one application
+  built on MeshCore, not the protocol.
 
-- Use this when: [a concrete task a user might ask an agent to do]
-- Use this when: [another concrete task]
-- Not a fit for: [an adjacent job this is *not* the right tool for]
-
-How to get an answer: [where the agent should look first — a docs index, a
-pricing page, a contact route. Name real URLs.]
+How to get an answer: start at /posts/ for the writing, or /tags/ to filter by
+subject. For the apps, /meshcore-sar/ and /gramps-viewer/ each carry a feature
+list, hardware requirements, a privacy policy, and a contact route. Email
+reaches a human.
 
 ## Key Pages
 
-- [Home](/)
+- [Home](/) — who Janez is, latest posts, and the two projects
+- [Posts](/posts/) — 6 posts, 2017–2025, on debugging, networking, radios, and remote work
+- [Tags](/tags/) — 18 tags indexing those posts by subject
+- [MeshCore SAR](/meshcore-sar/) — off-grid LoRa coordination for search and rescue: features, hardware requirements, client device work
+- [MeshCore SAR privacy policy](/meshcore-sar/privacy-policy/) — collects nothing; messages and GPS stay on device and inside the local mesh
+- [MeshCore SAR contact](/meshcore-sar/contact/) — support, bug reports, and SAR team deployment help
+- [GRAMPS Viewer](/gramps-viewer/) — genealogy viewer for Gramps XML, with iOS, Android, and Linux downloads
+- [GRAMPS Viewer privacy policy](/gramps-viewer/privacy-policy/) — collects nothing; everything runs on device
+- [GRAMPS Viewer contact](/gramps-viewer/contact/) — support and bug reports
+- [RSS feed](/index.xml) — every post
 
 ## Contact
 
-- Website: https://example.com
-- Email: hello@example.com
+- Website: https://dz0ny.dev
+- Email: hey@dz0ny.dev
+- GitHub: https://github.com/dz0ny

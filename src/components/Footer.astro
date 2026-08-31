@@ -1,0 +1,41 @@
+---
+import { SITE_CONTACT, SITE_NAME } from "@/lib/site";
+
+const year = new Date().getFullYear();
+const links = [
+	{ href: "https://github.com/dz0ny", label: "GitHub" },
+	{ href: "https://twitter.com/dz0ny", label: "Twitter" },
+	{ href: "https://instagram.com/dz0ny", label: "Instagram" },
+	{ href: "https://news.ycombinator.com/user?id=dz0ny", label: "HN" },
+	{ href: "/index.xml", label: "RSS" },
+];
+---
+
+<footer class="mt-24 border-t border-rule">
+  <div class="container flex flex-wrap items-baseline justify-between gap-x-8 gap-y-4 py-8 font-mono text-xs text-ink-muted">
+    <p>&copy; {year} {SITE_NAME}</p>
+    <ul class="flex flex-wrap gap-x-5 gap-y-2">
+      {
+        links.map((l) => (
+          <li>
+            <a href={l.href} class="transition-colors hover:text-cobalt">
+              {l.label}
+            </a>
+          </li>
+        ))
+      }
+      {
+        SITE_CONTACT.email && (
+          <li>
+            <a
+              href={`mailto:${SITE_CONTACT.email}`}
+              class="transition-colors hover:text-cobalt"
+            >
+              {SITE_CONTACT.email}
+            </a>
+          </li>
+        )
+      }
+    </ul>
+  </div>
+</footer>

@@ -1,0 +1,43 @@
+---
+import type { GetStaticPaths } from "astro";
+import Layout from "@/layouts/Layout.astro";
+import PostRow from "@/components/PostRow.astro";
+import { getPosts } from "@/lib/posts";
+
+// Hugo published /categories/<name>/ as a taxonomy. Keeping the route means
+// those URLs don't start 404ing after the migration.
+export const getStaticPaths = (async () => {
+	const posts = await getPosts();
+	const categories = [...new Set(posts.flatMap((post) => post.data.categories))];
+	return categories.map((category) => ({
+		params: { category },
+		props: {
+			category,
+			posts: posts.filter((post) => post.data.categories.includes(category)),
+		},
+	}));
+}) satisfies GetStaticPaths;
+
+const { category, posts } = Astro.props;
+---
+
+<Layout
+  title={`Posts in ${category}`}
+  description={`Every post on dz0ny.dev filed under ${category}.`}
+>
+  <p class="label-mono mb-4">Category</p>
+  <h1 class="font-display text-4xl font-bold tracking-tight sm:text-5xl">{category}</h1>
+  <p class="mt-4 text-ink-muted">
+    {posts.length} {posts.length === 1 ? "post" : "posts"}.
+  </p>
+
+  <div class="mt-10 max-w-3xl">
+    {posts.map((post) => <PostRow post={post} />)}
+  </div>
+
+  <nav class="mt-16 border-t border-rule pt-6">
+    <a href="/posts/" class="font-mono text-xs text-cobalt transition-colors hover:text-cobalt-hover">
+      &larr; All posts
+    </a>
+  </nav>
+</Layout>

@@ -1,0 +1,157 @@
+---
+import type { SoftwareApplication, WithContext } from "schema-dts";
+import Layout from "@/layouts/Layout.astro";
+
+const features = [
+	"Works without cellular service or internet access",
+	"Long-range, multi-hop transport over MeshCore LoRa radios",
+	"Live location, bearing, and distance for every contact",
+	"Offline vector maps with field drawing tools",
+	"Geo-tagged SAR markers such as Found Person, Fire Location, Staging Area, and Object Found",
+	"Direct messages, shared channels, and persistent rooms",
+	"Battery telemetry for teammates in the field",
+	"Compass pointing toward contacts and markers",
+	"Role badges so team roles are visible at a glance",
+	"Automatic relaying through the mesh",
+];
+
+const clientWork = [
+	"Localized interfaces, including Slovenian and Croatian",
+	"Watchdog timer that recovers automatically from software freezes",
+	"NRF52 hardware watchdog, which reduces the risk of device lockups",
+	"Redesigned device screens with simpler navigation and cleaner layouts",
+	"GPS display showing both fix age and accuracy",
+];
+
+const description =
+	"MeshCore SAR is a communication layer for search and rescue teams working beyond cellular coverage. Paired with MeshCore radios, it gives a team messaging, GPS positioning, and offline tactical mapping when the usual infrastructure is gone.";
+
+const schema: WithContext<SoftwareApplication> = {
+	"@context": "https://schema.org",
+	"@type": "SoftwareApplication",
+	name: "MeshCore SAR",
+	description,
+	applicationCategory: "UtilitiesApplication",
+	operatingSystem: "iOS, Android",
+	url: Astro.url.href,
+	author: { "@type": "Person", name: "Janez Troha" },
+	offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+};
+---
+
+<Layout title="MeshCore SAR" description={description} schema={schema}>
+  <section class="grid gap-12 md:grid-cols-12 md:gap-8">
+    <div class="md:col-span-8">
+      <p class="label-mono mb-4">Project</p>
+      <h1 class="entrance font-display text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl">
+        MeshCore SAR
+      </h1>
+      <p class="entrance mt-2 font-display text-xl font-medium text-ink-muted [animation-delay:60ms]">
+        Off-grid LoRa coordination for search and rescue
+      </p>
+      <p class="entrance mt-6 max-w-xl text-lg leading-relaxed text-ink-muted [animation-delay:80ms]">
+        {description}
+      </p>
+      <div class="entrance mt-8 flex flex-wrap items-center gap-3 [animation-delay:160ms]">
+        <a
+          href="https://github.com/dz0ny/meshcore-sar"
+          class="inline-flex items-center gap-2 rounded-sm bg-cobalt px-5 py-2.5 text-sm font-semibold text-white transition-all duration-150 hover:-translate-y-0.5 hover:bg-cobalt-hover active:scale-[0.98]"
+        >
+          Source on GitHub <span aria-hidden="true">&rarr;</span>
+        </a>
+        <a
+          href="/posts/meshcore-sar/"
+          class="inline-flex items-center gap-2 rounded-sm border border-rule-strong px-5 py-2.5 text-sm font-semibold text-ink transition-colors duration-150 hover:border-cobalt hover:text-cobalt"
+        >
+          Read the write-up
+        </a>
+      </div>
+    </div>
+
+    <div class="entrance md:col-span-4 md:border-l md:border-rule md:pl-8 [animation-delay:120ms]">
+      <p class="label-mono mb-4">At a glance</p>
+      <dl class="space-y-3 font-mono text-sm">
+        <div class="flex justify-between gap-4"><dt class="text-ink-faint">Transport</dt><dd>LoRa mesh</dd></div>
+        <div class="flex justify-between gap-4"><dt class="text-ink-faint">Link</dt><dd>Bluetooth</dd></div>
+        <div class="flex justify-between gap-4"><dt class="text-ink-faint">Maps</dt><dd>MBTiles, offline</dd></div>
+        <div class="flex justify-between gap-4"><dt class="text-ink-faint">Needs</dt><dd>MeshCore radios</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="mt-24 max-w-3xl" data-reveal>
+    <p class="label-mono mb-6">Features</p>
+    <ul>
+      {features.map((f) => <li class="border-b border-rule py-3 text-ink">{f}</li>)}
+    </ul>
+  </section>
+
+  <!-- Surface band: punctuation between two list sections -->
+  <section class="mt-24 border border-rule bg-surface p-8 sm:p-10" data-reveal>
+      <div class="grid gap-8 md:grid-cols-12">
+        <div class="md:col-span-5">
+          <h2 class="font-display text-2xl font-bold tracking-tight">Hardware requirements</h2>
+        </div>
+        <div class="md:col-span-7 space-y-4 text-ink-muted">
+          <p>
+            MeshCore SAR needs MeshCore devices for LoRa transport. The app connects to
+            those radios over Bluetooth and turns a smartphone into a field terminal for
+            coordination and navigation.
+          </p>
+          <p>
+            It works with dedicated MeshCore nodes built for field deployment, repeaters
+            that are already installed, other team members' client devices, and room nodes
+            acting as persistent hubs. Because it uses the same devices, a team can extend
+            an existing MeshCore network or set up a new one without changing how it operates.
+          </p>
+        </div>
+      </div>
+  </section>
+
+  <section class="mt-24 grid gap-12 md:grid-cols-2 md:gap-16" data-reveal>
+    <div>
+      <p class="label-mono mb-6">Communication</p>
+      <p class="text-ink-muted">
+        Messages come in four forms: private one-to-one messages, public channels for
+        network-wide updates, rooms that keep a shared log such as <em>General</em> or
+        <em>Emergency</em>, and SAR marker messages, which are geo-tagged alerts with
+        delivery tracking.
+      </p>
+    </div>
+    <div>
+      <p class="label-mono mb-6">Tactical display</p>
+      <p class="text-ink-muted">
+        Offline vector maps (MBTiles) with street, topo, and satellite layers. SAR event
+        markers are color-coded by incident type. Drawing tools cover routes, search zones,
+        and quick annotations, and the compass gives direction and range to people, nodes,
+        and markers.
+      </p>
+    </div>
+  </section>
+
+  <section class="mt-24 max-w-3xl" data-reveal>
+    <p class="label-mono mb-6">Client device improvements</p>
+    <p class="mb-6 text-ink-muted">
+      The client-side work targets reliability in the field and clearer information at a glance:
+    </p>
+    <ul>
+      {clientWork.map((w) => <li class="border-b border-rule py-3 text-ink">{w}</li>)}
+    </ul>
+  </section>
+
+  <section class="mt-24 max-w-3xl" data-reveal>
+    <p class="label-mono mb-4">Also</p>
+    <ul class="font-mono text-sm">
+      <li class="border-b border-rule py-3">
+        <a href="/meshcore-sar/privacy-policy/" class="text-ink transition-colors hover:text-cobalt">
+          Privacy Policy <span class="text-ink-faint">— how the app handles your data</span>
+        </a>
+      </li>
+      <li class="border-b border-rule py-3">
+        <a href="/meshcore-sar/contact/" class="text-ink transition-colors hover:text-cobalt">
+          Contact <span class="text-ink-faint">— questions and feedback</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+</Layout>

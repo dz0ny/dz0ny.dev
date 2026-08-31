@@ -9,6 +9,7 @@ import pagefind from "astro-pagefind";
 import { agentsSummary } from "@nuasite/agent-summary";
 import astroAgentAnnotate from "astro-agent-annotate";
 import cloudflare from "@astrojs/cloudflare";
+import { rehypeContentImages } from "./src/lib/rehype-content-images.mjs";
 
 const isDevelopment = process.env.NODE_ENV === "development";
 const devToolbar = { enabled: isDevelopment };
@@ -18,12 +19,26 @@ export default defineConfig({
   site: "https://dz0ny.dev",
   output: "static",
   trailingSlash: "always",
+
+  markdown: {
+    rehypePlugins: [rehypeContentImages],
+    // Dual themes with `defaultColor: false` emit both palettes as CSS
+    // variables; index.css picks the dark one under `.dark`, since this site
+    // toggles by class rather than by prefers-color-scheme alone.
+    shikiConfig: {
+      themes: { light: "github-light", dark: "github-dark" },
+      defaultColor: false,
+      wrap: false,
+    },
+  },
   // No `image.service` key on purpose: Astro's schema default is already
   // `astro/assets/services/sharp`, which is what we want. Setting it explicitly
   // buys nothing — and see the adapter note below before changing `imageService`.
   integrations: [
     react(),
-    sitemap(),
+    // branding.astro is the living style guide, not a public page: it is
+    // noindex, so it has no business in the sitemap either.
+    sitemap({ filter: (page) => !page.includes("/branding/") }),
     agentsSummary(),
     pagefind(),
     ...(devToolbar.enabled ? [astroAgentAnnotate()] : []),

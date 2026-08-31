@@ -1,0 +1,23 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { getTags } from "@/lib/posts";
+
+const tags = await getTags();
+---
+
+<Layout title="Tags" description="Every tag used on dz0ny.dev.">
+  <h1 class="font-display text-4xl font-bold tracking-tight sm:text-5xl">Tags</h1>
+
+  <ul class="mt-10 grid max-w-3xl gap-px border border-rule bg-rule sm:grid-cols-2 lg:grid-cols-3">
+    {
+      tags.map(({ tag, count }) => (
+        <li class="bg-ground">
+          <a href={`/tags/${tag}/`} class="flex items-baseline justify-between gap-4 p-4 font-mono text-sm transition-colors hover:bg-surface hover:text-cobalt">
+            <span>{tag}</span>
+            <span class="text-ink-faint">{count}</span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</Layout>

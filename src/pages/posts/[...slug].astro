@@ -1,0 +1,65 @@
+---
+import type { GetStaticPaths } from "astro";
+import { render } from "astro:content";
+import type { BlogPosting, WithContext } from "schema-dts";
+import Layout from "@/layouts/Layout.astro";
+import { getPosts } from "@/lib/posts";
+import { isoDate, SITE_NAME } from "@/lib/site";
+
+export const getStaticPaths = (async () => {
+	const posts = await getPosts();
+	return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}) satisfies GetStaticPaths;
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const { title, subtitle, description, date, tags } = post.data;
+
+const schema: WithContext<BlogPosting> = {
+	"@context": "https://schema.org",
+	"@type": "BlogPosting",
+	headline: title,
+	datePublished: date.toISOString(),
+	...(description && { description }),
+	author: { "@type": "Person", name: SITE_NAME, url: "https://dz0ny.dev/" },
+	mainEntityOfPage: Astro.url.href,
+	...(tags.length > 0 && { keywords: tags.join(", ") }),
+};
+---
+
+<Layout title={title} description={description ?? subtitle} width="prose" schema={schema}>
+  <article>
+    <header class="border-b border-rule pb-8">
+      <p class="label-mono mb-4">
+        <time datetime={date.toISOString()}>{isoDate(date)}</time>
+      </p>
+      <h1 class="font-display text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl">
+        {title}
+      </h1>
+      {subtitle && <p class="mt-4 text-lg text-ink-muted">{subtitle}</p>}
+      {
+        tags.length > 0 && (
+          <ul class="mt-6 flex flex-wrap gap-x-4 gap-y-2 font-mono text-xs text-ink-faint">
+            {tags.map((tag) => (
+              <li>
+                <a href={`/tags/${tag}/`} class="transition-colors hover:text-cobalt">
+                  {tag}
+                </a>
+              </li>
+            ))}
+          </ul>
+        )
+      }
+    </header>
+
+    <div class="article mt-10">
+      <Content />
+    </div>
+  </article>
+
+  <nav class="mt-16 border-t border-rule pt-6">
+    <a href="/posts/" class="font-mono text-xs text-cobalt transition-colors hover:text-cobalt-hover">
+      &larr; All posts
+    </a>
+  </nav>
+</Layout>

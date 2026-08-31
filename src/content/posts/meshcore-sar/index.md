@@ -35,28 +35,10 @@ Whether you're extending an established mesh or starting from scratch, every Mes
 
 ## Client Devices
 
-<div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
-  <div style="text-align: center;">
-    <a href="app-1.jpg" target="_blank" class="image-link" style="text-decoration: none; border: none;">
-      {{< img src="app-1.jpg" alt="Client device view 1" width="300" >}}
-    </a>
-  </div>
-  <div style="text-align: center;">
-    <a href="app-2.jpg" target="_blank" class="image-link" style="text-decoration: none; border: none;">
-      {{< img src="app-2.jpg" alt="Client device view 2" width="300" >}}
-    </a>
-  </div>
-  <div style="text-align: center;">
-    <a href="app-3.jpg" target="_blank" class="image-link" style="text-decoration: none; border: none;">
-      {{< img src="app-3.jpg" alt="Client device view 3" width="300" >}}
-    </a>
-  </div>
-  <div style="text-align: center;">
-    <a href="app-4.jpg" target="_blank" class="image-link" style="text-decoration: none; border: none;">
-      {{< img src="app-4.jpg" alt="Client device view 4" width="300" >}}
-    </a>
-  </div>
-</div>
+![Client device showing the BLE pairing PIN](app-1.jpg)
+![Location share screen with node id, latitude and longitude](app-2.jpg)
+![Empty message inbox on the client device](app-3.jpg)
+![Reports menu: GPS info, radio stats, telemetry, debug keys, system stats](app-4.jpg)
 
 The client interface takes inspiration from **Meshtastic InkHUD** and adapts it for MeshCore with a cleaner, more operational display:
 
@@ -82,33 +64,9 @@ Find the source, releases, and implementation details at:
 
 ## Messages
 
-<style>
-.image-link::after {
-  display: none !important;
-  content: none !important;
-}
-</style>
-
-<div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
-  <div style="text-align: center;">
-    <h4>Messages View</h4>
-    <a href="messages-1.png" target="_blank" class="image-link" style="text-decoration: none; border: none;">
-      {{< img src="messages-1.png" alt="Messages view" width="200" >}}
-    </a>
-  </div>
-  <div style="text-align: center;">
-    <h4>Send SAR Marker</h4>
-    <a href="messages-2.png" target="_blank" class="image-link" style="text-decoration: none; border: none;">
-      {{< img src="messages-2.png" alt="Send SAR marker" width="200" >}}
-    </a>
-  </div>
-  <div style="text-align: center;">
-    <h4>SAR Alerts Feed</h4>
-    <a href="messages-3.png" target="_blank" class="image-link" style="text-decoration: none; border: none;">
-      {{< img src="messages-3.png" alt="SAR alerts" width="200" >}}
-    </a>
-  </div>
-</div>
+![Messages view](messages-1.png)
+![Send SAR marker](messages-2.png)
+![SAR alerts feed](messages-3.png)
 
 ### Mission Communication
 - **Direct Messages** – private one-to-one coordination  
@@ -125,26 +83,9 @@ Messages appear directly on the map with delivery states such as Sent, Delivered
 
 ## Contacts
 
-<div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
-  <div style="text-align: center;">
-    <h4>Team List</h4>
-    <a href="contacts-1.png" target="_blank" class="image-link" style="text-decoration: none; border: none;">
-      {{< img src="contacts-1.png" alt="Contacts list" width="200" >}}
-    </a>
-  </div>
-  <div style="text-align: center;">
-    <h4>Contact Details</h4>
-    <a href="contacts-2.png" target="_blank" class="image-link" style="text-decoration: none; border: none;">
-      {{< img src="contacts-2.png" alt="Contact detail" width="200" >}}
-    </a>
-  </div>
-  <div style="text-align: center;">
-    <h4>Compass View</h4>
-    <a href="contacts-3.png" target="_blank" class="image-link" style="text-decoration: none; border: none;">
-      {{< img src="contacts-3.png" alt="Compass orientation" width="200" >}}
-    </a>
-  </div>
-</div>
+![Team list](contacts-1.png)
+![Contact details](contacts-2.png)
+![Compass view](contacts-3.png)
 
 ### Situational Awareness
 - Real-time **GPS**, **bearing**, and **distance** for each teammate  
@@ -157,26 +98,9 @@ Messages appear directly on the map with delivery states such as Sent, Delivered
 
 ## Map
 
-<div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
-  <div style="text-align: center;">
-    <h4>Tactical Map</h4>
-    <a href="map-1.png" target="_blank" class="image-link" style="text-decoration: none; border: none;">
-      {{< img src="map-1.png" alt="Map Ljubljana" width="200" >}}
-    </a>
-  </div>
-  <div style="text-align: center;">
-    <h4>Drawing Tools</h4>
-    <a href="map-2.png" target="_blank" class="image-link" style="text-decoration: none; border: none;">
-      {{< img src="map-2.png" alt="Drawing tools" width="200" >}}
-    </a>
-  </div>
-  <div style="text-align: center;">
-    <h4>Compass Navigation</h4>
-    <a href="map-3.png" target="_blank" class="image-link" style="text-decoration: none; border: none;">
-      {{< img src="map-3.png" alt="Compass detail" width="200" >}}
-    </a>
-  </div>
-</div>
+![Tactical map](map-1.png)
+![Drawing tools](map-2.png)
+![Compass navigation](map-3.png)
 
 ### Tactical Display
 - **Offline vector maps (MBTiles)** with street, topo, and satellite layers  

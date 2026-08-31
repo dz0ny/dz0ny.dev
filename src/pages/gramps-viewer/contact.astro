@@ -1,0 +1,32 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import LegalPage from "@/components/LegalPage.astro";
+---
+
+<Layout
+  title="Contact - GRAMPS Viewer"
+  description="Questions, feedback, or support for GRAMPS Viewer."
+  width="prose"
+>
+  <LegalPage
+    kicker="GRAMPS Viewer"
+    title="Contact"
+    backHref="/gramps-viewer/"
+    backLabel="GRAMPS Viewer"
+  >
+    <p>
+      Questions, feedback, or support for GRAMPS Viewer:
+      <a href="mailto:hey@dz0ny.dev">hey@dz0ny.dev</a>
+    </p>
+
+    <h2>Reporting an issue</h2>
+    <p>If something is broken or you want a feature, include:</p>
+    <ul>
+      <li>Your device model and operating system version</li>
+      <li>What went wrong, or what you would like the app to do</li>
+      <li>Steps to reproduce the problem, if it is a bug</li>
+    </ul>
+
+    <p>I read everything and reply as soon as I can.</p>
+  </LegalPage>
+</Layout>

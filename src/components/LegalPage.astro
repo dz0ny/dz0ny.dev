@@ -1,0 +1,30 @@
+---
+interface Props {
+	kicker: string;
+	title: string;
+	/** Shown under the title on policy pages. */
+	effective?: string;
+	backHref: string;
+	backLabel: string;
+}
+
+const { kicker, title, effective, backHref, backLabel } = Astro.props;
+---
+
+<p class="label-mono mb-4">{kicker}</p>
+<h1 class="font-display text-4xl font-bold tracking-tight sm:text-5xl">{title}</h1>
+{
+	effective && (
+		<p class="mt-3 font-mono text-xs text-ink-faint">Effective date: {effective}</p>
+	)
+}
+
+<div class="article mt-10">
+  <slot />
+</div>
+
+<nav class="mt-16 border-t border-rule pt-6">
+  <a href={backHref} class="font-mono text-xs text-cobalt transition-colors hover:text-cobalt-hover">
+    &larr; {backLabel}
+  </a>
+</nav>

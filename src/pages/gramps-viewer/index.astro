@@ -1,0 +1,140 @@
+---
+import type { SoftwareApplication, WithContext } from "schema-dts";
+import Layout from "@/layouts/Layout.astro";
+
+const features = [
+	"Import and manage genealogy data from several Gramps XML files",
+	"Track modifications and updates to your family tree data",
+	"Interactive family tree display with custom-designed views",
+	"Detailed profile pages for each person",
+	"Browse by surname",
+	"Source manager for organizing your data sources",
+	"Updates page listing recent changes",
+	"Dark mode",
+];
+
+const downloads = [
+	{
+		platform: "iOS",
+		detail: "TestFlight beta",
+		href: "https://testflight.apple.com/join/ZrAymRE5",
+		cta: "Join the beta",
+		note: null,
+	},
+	{
+		platform: "Android",
+		detail: "APK",
+		href: "https://dz0ny.github.io/gramps-go/android/app-release-5f26604.apk",
+		cta: "Download the APK",
+		note: 'Enable "Install from unknown sources" in Android settings.',
+	},
+	{
+		platform: "Linux",
+		detail: "tar.gz",
+		href: "https://dz0ny.github.io/gramps-go/linux/gramps-viewer-linux-5f26604.tar.gz",
+		cta: "Download the build",
+		note: "Extract it and run ./gramps_viewer",
+	},
+];
+
+const description =
+	"A Flutter app for reading genealogy data from Gramps XML files. It shows your family tree, keeps track of what changed, and works with several data sources at once.";
+
+const schema: WithContext<SoftwareApplication> = {
+	"@context": "https://schema.org",
+	"@type": "SoftwareApplication",
+	name: "GRAMPS Viewer",
+	description,
+	applicationCategory: "UtilitiesApplication",
+	operatingSystem: "iOS, Android, Linux",
+	url: Astro.url.href,
+	author: { "@type": "Person", name: "Janez Troha" },
+	offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+};
+---
+
+<Layout title="GRAMPS Viewer" description={description} schema={schema}>
+  <section class="grid gap-12 md:grid-cols-12 md:gap-8">
+    <div class="md:col-span-8">
+      <p class="label-mono mb-4">Project</p>
+      <h1 class="entrance font-display text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl">
+        GRAMPS Viewer
+      </h1>
+      <p class="entrance mt-6 max-w-xl text-lg leading-relaxed text-ink-muted [animation-delay:80ms]">
+        {description}
+      </p>
+      <div class="entrance mt-8 flex flex-wrap items-center gap-3 [animation-delay:160ms]">
+        <a
+          href="#download"
+          class="inline-flex items-center gap-2 rounded-sm bg-cobalt px-5 py-2.5 text-sm font-semibold text-white transition-all duration-150 hover:-translate-y-0.5 hover:bg-cobalt-hover active:scale-[0.98]"
+        >
+          Download <span aria-hidden="true">&darr;</span>
+        </a>
+        <a
+          href="https://github.com/dz0ny/gramps-go"
+          class="inline-flex items-center gap-2 rounded-sm border border-rule-strong px-5 py-2.5 text-sm font-semibold text-ink transition-colors duration-150 hover:border-cobalt hover:text-cobalt"
+        >
+          Source on GitHub
+        </a>
+      </div>
+    </div>
+
+    <div class="entrance md:col-span-4 md:border-l md:border-rule md:pl-8 [animation-delay:120ms]">
+      <p class="label-mono mb-4">At a glance</p>
+      <dl class="space-y-3 font-mono text-sm">
+        <div class="flex justify-between gap-4"><dt class="text-ink-faint">Built with</dt><dd>Flutter</dd></div>
+        <div class="flex justify-between gap-4"><dt class="text-ink-faint">Platforms</dt><dd>iOS, Android, Linux</dd></div>
+        <div class="flex justify-between gap-4"><dt class="text-ink-faint">Reads</dt><dd>Gramps XML</dd></div>
+        <div class="flex justify-between gap-4"><dt class="text-ink-faint">Price</dt><dd>Free</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="mt-24 max-w-3xl" data-reveal>
+    <p class="label-mono mb-6">Features</p>
+    <ul class="space-y-0">
+      {
+        features.map((feature) => (
+          <li class="border-b border-rule py-3 text-ink">{feature}</li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section id="download" class="mt-24" data-reveal>
+    <p class="label-mono mb-6">Download</p>
+    <div class="grid gap-px overflow-hidden border border-rule bg-rule sm:grid-cols-3">
+      {
+        downloads.map((d) => (
+          <div class="flex flex-col bg-ground p-6">
+            <p class="font-display text-xl font-bold tracking-tight">{d.platform}</p>
+            <p class="mt-1 font-mono text-xs text-ink-faint">{d.detail}</p>
+            <a
+              href={d.href}
+              class="mt-4 inline-flex w-fit items-center gap-2 text-sm font-semibold text-cobalt transition-colors hover:text-cobalt-hover"
+            >
+              {d.cta} <span aria-hidden="true">&rarr;</span>
+            </a>
+            {d.note && <p class="mt-3 text-xs leading-relaxed text-ink-muted">{d.note}</p>}
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="mt-24 max-w-3xl" data-reveal>
+    <p class="label-mono mb-4">Also</p>
+    <ul class="font-mono text-sm">
+      <li class="border-b border-rule py-3">
+        <a href="/gramps-viewer/privacy-policy/" class="text-ink transition-colors hover:text-cobalt">
+          Privacy Policy <span class="text-ink-faint">— how the app handles your data</span>
+        </a>
+      </li>
+      <li class="border-b border-rule py-3">
+        <a href="/gramps-viewer/contact/" class="text-ink transition-colors hover:text-cobalt">
+          Contact <span class="text-ink-faint">— questions and feedback</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+</Layout>

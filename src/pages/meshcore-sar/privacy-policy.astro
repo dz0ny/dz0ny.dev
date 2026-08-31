@@ -1,0 +1,82 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import LegalPage from "@/components/LegalPage.astro";
+---
+
+<Layout
+  title="Privacy Policy - MeshCore SAR"
+  description="MeshCore SAR collects nothing. Messages and location data stay on your device and inside the local mesh."
+  width="prose"
+>
+  <LegalPage
+    kicker="MeshCore SAR"
+    title="Privacy Policy"
+    effective="October 18, 2025"
+    backHref="/meshcore-sar/"
+    backLabel="MeshCore SAR"
+  >
+    <p>
+      This policy explains how MeshCore SAR ("we", "our", or "us") handles information
+      when you use the mobile application ("App").
+    </p>
+
+    <h2>Information we collect</h2>
+    <p>
+      We do not collect, store, or share any personal information. MeshCore SAR does not
+      ask you to sign in, create an account, or provide personal data. Everything the app
+      does runs on your device and across the local MeshCore mesh network.
+    </p>
+
+    <h2>Data storage and access</h2>
+    <p>
+      All data you create, send, or receive in MeshCore SAR stays on your device and within
+      the local mesh network. We do not send your messages, location data, contacts, or
+      anything else to external servers, and we cannot access them.
+    </p>
+
+    <h3>Local mesh communication</h3>
+    <p>
+      Messages and location data travel only over the MeshCore LoRa mesh network, between
+      devices you have paired with. That traffic:
+    </p>
+    <ul>
+      <li>Moves peer to peer or through mesh repeaters</li>
+      <li>Does not route through the internet or cellular networks</li>
+      <li>Is not stored on any centralized server</li>
+      <li>Stays within your local mesh network</li>
+    </ul>
+
+    <h2>Third-party services</h2>
+    <p>
+      MeshCore SAR does not use third-party analytics, advertising networks, or tracking
+      tools. No information is shared with external services.
+    </p>
+
+    <h2>Location data</h2>
+    <p>
+      MeshCore SAR uses GPS location data for position tracking and navigation. That
+      location data:
+    </p>
+    <ul>
+      <li>Stays on your device</li>
+      <li>Reaches other devices on your local mesh network only when you choose to transmit it</li>
+      <li>Is never sent to external servers or services</li>
+      <li>Can be controlled in the app's settings</li>
+    </ul>
+
+    <h2>Children's privacy</h2>
+    <p>
+      MeshCore SAR does not knowingly collect or process data from users of any age,
+      including children.
+    </p>
+
+    <h2>Changes to this policy</h2>
+    <p>If this policy changes, we will update this page and the effective date above.</p>
+
+    <h2>Contact us</h2>
+    <p>
+      Questions or concerns about this policy:
+      <a href="mailto:hey@dz0ny.dev">hey@dz0ny.dev</a>
+    </p>
+  </LegalPage>
+</Layout>
